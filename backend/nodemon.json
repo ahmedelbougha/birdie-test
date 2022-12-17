@@ -1,6 +1,6 @@
 {
   "watch": ["src"],
   "ext": "ts,js",
-  "ignore": ["src/**/*.spec.ts"],
+  "ignore": ["src/**/*.spec.ts", "src/**/*.test.ts"],
   "exec": "node --inspect -r ts-node/register src/index.ts"
 }
