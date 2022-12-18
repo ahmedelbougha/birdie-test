@@ -1,25 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from 'react-redux';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import HomePage from './pages/Home';
+import DashboardPage from './pages/Dashboard';
+import Spinner from './components/Spinner';
+import ErrorPage from './pages/Error';
+import { RootState } from './store/index';
+
+const router = createBrowserRouter([
+  {
+    // error page for any non existing page
+    path: '*',
+    element: <ErrorPage errorStatus={true} />,
+  },
+  {
+    // home page
+    path: '/',
+    element: <HomePage />,
+  },
+  {
+    // dashboard page
+    path: '/dashboard/:recipientId',
+    element: <DashboardPage />,
+  },
+]);
 
 function App() {
+  const { loading, error, errorStatus } = useSelector(
+    (
+      state: RootState
+    ): { error: unknown; errorStatus: boolean; loading: boolean } => {
+      // get errors
+      const error = state.general.error;
+      // get loading status
+      const loading = state.general.loading;
+      return { ...error, loading };
+    }
+  );
+
+  if (errorStatus) {
+    return <ErrorPage error={error} errorStatus={errorStatus} />;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {!!loading && <Spinner />}
+
+      <RouterProvider router={router} fallbackElement={<Spinner />} />
+    </>
   );
 }
 
