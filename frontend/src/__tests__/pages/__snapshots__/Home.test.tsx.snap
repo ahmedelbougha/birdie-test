@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page Home page after loading recipients 1`] = `
+Array [
+  <h2>
+    Welcome to Birdie customer portal.
+  </h2>,
+  <div
+    className="sc-bcXHqe gXVBWp"
+  >
+    <div
+      className="sc-eDvSVe iXQdcB"
+    >
+      <div>
+        <img
+          alt="Mr./Mrs. df50c"
+          src="placeholder.png"
+        />
+      </div>
+      <div>
+        <h2>
+          Mr./Mrs. df50c
+        </h2>
+        <div
+          className="sc-hLBbgP geNomd"
+        />
+        <p>
+          Birdie Client
+        </p>
+        <a
+          href="/dashboard/df50cac5-293c-490d-a06c-ee26796f850d"
+          onClick={[Function]}
+        >
+          <button
+            className="sc-dkrFOg gARiqw"
+          >
+             Details 
+          </button>
+        </a>
+      </div>
+    </div>
+    <div
+      className="sc-eDvSVe iXQdcB"
+    >
+      <div>
+        <img
+          alt="Mr./Mrs. e3e2b"
+          src="placeholder.png"
+        />
+      </div>
+      <div>
+        <h2>
+          Mr./Mrs. e3e2b
+        </h2>
+        <div
+          className="sc-hLBbgP geNomd"
+        />
+        <p>
+          Birdie Client
+        </p>
+        <a
+          href="/dashboard/e3e2bff8-d318-4760-beea-841a75f00227"
+          onClick={[Function]}
+        >
+          <button
+            className="sc-dkrFOg gARiqw"
+          >
+             Details 
+          </button>
+        </a>
+      </div>
+    </div>
+    <div
+      className="sc-eDvSVe iXQdcB"
+    >
+      <div>
+        <img
+          alt="Mr./Mrs. ad351"
+          src="placeholder.png"
+        />
+      </div>
+      <div>
+        <h2>
+          Mr./Mrs. ad351
+        </h2>
+        <div
+          className="sc-hLBbgP geNomd"
+        />
+        <p>
+          Birdie Client
+        </p>
+        <a
+          href="/dashboard/ad3512a6-91b1-4d7d-a005-6f8764dd0111"
+          onClick={[Function]}
+        >
+          <button
+            className="sc-dkrFOg gARiqw"
+          >
+             Details 
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Home Page Home page in initial state 1`] = `
+<div
+  className="sc-gswNZR kkvFUJ"
+>
+  <h2>
+    There's no care recipients records in the time being!
+  </h2>
+</div>
+`;

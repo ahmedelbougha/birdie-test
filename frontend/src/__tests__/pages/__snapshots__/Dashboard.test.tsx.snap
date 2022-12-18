@@ -1,0 +1,346 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard Page Dashboard page after loading recipient's data 1`] = `
+Array [
+  <h2>
+    Client Info
+  </h2>,
+  <div
+    className="sc-bcXHqe iuWKlD"
+  >
+    <div
+      className="sc-dkrFOg hqJEoX"
+    >
+      <div
+        className="sc-jSUZER kEmbCt"
+      >
+        <div>
+          <img
+            alt="Mr./Mrs. some-"
+            src="placeholder.png"
+          />
+        </div>
+        <div>
+          <h2>
+            Mr./Mrs. some-
+          </h2>
+        </div>
+      </div>
+      <table
+        className="sc-gKPRtg eksiXW"
+      >
+        <tbody>
+          <tr>
+            <td>
+              alert qualified
+            </td>
+            <td>
+              5
+            </td>
+            <td>
+              alert raised
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              catheter observation
+            </td>
+            <td>
+              12
+            </td>
+            <td>
+              check in
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              check out
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              concern raised
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              fluid intake observation
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              food intake observation
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              general observation
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              incontinence pad observation
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              medication schedule created
+            </td>
+            <td>
+              10
+            </td>
+            <td>
+              medication schedule updated
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              mental health observation
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              mood observation
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              no medication observation received
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              physical health observation
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              regular medication maybe taken
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              regular medication not taken
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              regular medication partially taken
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              regular medication taken
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              task completed
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              task completion reverted
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              task schedule created
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              toilet visit recorded
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              visit cancelled
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              visit completed
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      className="vertical-timeline vertical-timeline--animate vertical-timeline--two-columns"
+    >
+      <div
+        className="vertical-timeline-element--work vertical-timeline-element"
+        id=""
+        style={null}
+      >
+        <span
+          className="vertical-timeline-element-icon is-hidden"
+          onClick={null}
+          style={
+            Object {
+              "background": "#28b5bd",
+              "color": "#fff",
+            }
+          }
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+            />
+          </svg>
+        </span>
+        <div
+          className="vertical-timeline-element-content is-hidden"
+          onClick={null}
+          style={
+            Object {
+              "background": "#28b5bd",
+              "color": "#fff",
+            }
+          }
+        >
+          <div
+            className="vertical-timeline-element-content-arrow"
+            style={
+              Object {
+                "borderRight": "7px solid #28b5bd",
+              }
+            }
+          />
+          <h3
+            className="vertical-timeline-element-title"
+          >
+            TASK COMPLETED
+          </h3>
+          <h4
+            className="vertical-timeline-element-subtitle"
+          >
+            Sun May 12 2019
+          </h4>
+          <div>
+            <p>
+              some note goes here!
+            </p>
+            <p>
+              some description goes here!
+            </p>
+          </div>
+          <span
+            className="vertical-timeline-element-date"
+          >
+            
+          </span>
+        </div>
+      </div>
+      <div
+        className="vertical-timeline-element vertical-timeline-element--no-children"
+        id=""
+        style={null}
+      >
+        <span
+          className="vertical-timeline-element-icon is-hidden"
+          onClick={null}
+          style={
+            Object {
+              "background": "rgb(16, 204, 82)",
+              "color": "#fff",
+            }
+          }
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+            />
+          </svg>
+        </span>
+        <div
+          className="vertical-timeline-element-content is-hidden"
+          onClick={null}
+          style={null}
+        >
+          <div
+            className="vertical-timeline-element-content-arrow"
+            style={null}
+          />
+          
+          <span
+            className="vertical-timeline-element-date"
+          >
+            
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Dashboard Page Dashboard page in initial state 1`] = `
+<div
+  className="sc-gswNZR kkvFUJ"
+>
+  <h2>
+    There's no matching care recipients records!
+  </h2>
+</div>
+`;

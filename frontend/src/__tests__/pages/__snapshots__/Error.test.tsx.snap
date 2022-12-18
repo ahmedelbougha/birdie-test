@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Page renders 1`] = `
+<div
+  className="sc-bcXHqe CLyot"
+>
+  <div>
+    <h1>
+      Oops!
+    </h1>
+    <p>
+      Sorry, an unexpected error has occurred.
+    </p>
+    <p>
+      <i>
+        
+      </i>
+    </p>
+  </div>
+</div>
+`;
