@@ -1,11 +1,11 @@
-import app from '../../src/application';
-import * as request from 'supertest';
+import app from "../../src/application";
+import * as request from "supertest";
 
-describe('Test event controller actions', () => {
-  it('Get /events should return events with status 200', async () => {
+describe("Test event controller actions", () => {
+  it("Get /events should return events with status 200", async () => {
     await request(app)
-      .get('/events')
-      .expect('Content-Type', /json/)
+      .get("/events")
+      .expect("Content-Type", /json/)
       .expect(200)
       .expect(function (res) {
         console.log(typeof res.body.data);
@@ -15,8 +15,8 @@ describe('Test event controller actions', () => {
 
   it("Get /events/{recipientId} should return recipient's events with status 200", async () => {
     await request(app)
-      .get('/events/not-found-recipient-id')
-      .expect('Content-Type', /json/)
+      .get("/events/not-found-recipient-id")
+      .expect("Content-Type", /json/)
       .expect(200)
       .expect(function (res) {
         expect(res.body.data).toBeInstanceOf(Array);
@@ -33,8 +33,8 @@ describe('Test event controller actions', () => {
 
   it("Get /events/{recipientId} should return recipient's events with status 200", async () => {
     await request(app)
-      .get('/events/not-found-recipient-id')
-      .expect('Content-Type', /json/)
+      .get("/events/not-found-recipient-id")
+      .expect("Content-Type", /json/)
       .expect(200)
       .expect(function (res) {
         expect(res.body.data).toBeInstanceOf(Array);

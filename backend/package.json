@@ -10,8 +10,9 @@
   "types": "lib/index",
   "scripts": {
     "clean": "rimraf lib && rimraf coverage",
-    "format": "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
+    "format": "prettier --write \"{src,__tests__}/**/*.ts\" --trailing-comma es5",
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "eslint": "eslint --ext js,ts,tsx src",
     "test": "node -e \"console.log('Please run tests with either test:unit or test:integration')\"",
     "test:unit": "jest __tests__/unit",
     "test:integration": "jest __tests__/integration",
@@ -54,6 +55,8 @@
   },
   "jest": {
     "preset": "ts-jest",
-    "testPathIgnorePatterns": ["/__tests__/mocks/"]
+    "testPathIgnorePatterns": [
+      "/__tests__/mocks/"
+    ]
   }
 }

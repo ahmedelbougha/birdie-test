@@ -1,5 +1,5 @@
-import { Sequelize } from 'sequelize';
-import Event from '../models/event';
+import { Sequelize } from "sequelize";
+import Event from "../models/event";
 
 type recipientSummary = {
   event_type: string;
@@ -23,7 +23,7 @@ const fetchEvents = async (
     limit,
     // assigning empty where object in case there's no recipientId
     where: { ...(recipientId && { care_recipient_id: recipientId }) },
-    order: [['timeStamp', 'DESC']],
+    order: [["timeStamp", "DESC"]],
   });
   return { events: rows, count };
 };
@@ -41,8 +41,8 @@ const fetchRecipients = async (
   const rows = await Event.findAll({
     attributes: [
       [
-        Sequelize.fn('DISTINCT', Sequelize.col('care_recipient_id')),
-        'care_recipient_id',
+        Sequelize.fn("DISTINCT", Sequelize.col("care_recipient_id")),
+        "care_recipient_id",
       ],
     ],
     offset,
@@ -64,10 +64,10 @@ const fetchRecipientSummary = async (
 }> => {
   const rows = await Event.findAll({
     attributes: [
-      'event_type',
-      [Sequelize.fn('Count', Sequelize.col('event_type')), 'event_type_count'],
+      "event_type",
+      [Sequelize.fn("Count", Sequelize.col("event_type")), "event_type_count"],
     ],
-    group: ['care_recipient_id', 'event_type'],
+    group: ["care_recipient_id", "event_type"],
     having: { care_recipient_id: recipientId },
   });
 

@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import eventService from '../services/event';
+import { Request, Response } from "express";
+import eventService from "../services/event";
 
 /**
  * Controller function to get all events or can use optional recipientId for filtering
@@ -21,7 +21,8 @@ async function getEvents(request: Request, response: Response): Promise<void> {
     });
   } catch (error) {
     response.status(500).json({
-      // this is for testing purpose, the error should be logged instead and return "unknown error"
+      // this is for testing purpose, the error should be logged instead and
+      // return "unknown error"
       error,
     });
   }

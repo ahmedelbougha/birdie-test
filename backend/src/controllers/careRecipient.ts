@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import eventService from '../services/event';
+import { Request, Response } from "express";
+import eventService from "../services/event";
 
 /**
  * Controller function to get care recipients
@@ -18,7 +18,8 @@ export async function getRecipients(
     });
   } catch (error) {
     response.status(500).json({
-      // this is for testing purpose, the error should be logged instead and return "unknown error"
+      // this is for testing purpose, the error should be logged instead and
+      // return "unknown error"
       error,
     });
   }

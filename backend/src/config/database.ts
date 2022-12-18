@@ -1,4 +1,4 @@
-import { Sequelize } from 'sequelize';
+import { Sequelize } from "sequelize";
 
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASSWORD;

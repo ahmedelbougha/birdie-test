@@ -1,5 +1,5 @@
-import { DataTypes, Model, InferAttributes } from 'sequelize';
-import sequelize from '../config/database';
+import { DataTypes, Model, InferAttributes } from "sequelize";
+import sequelize from "../config/database";
 
 class Event extends Model<InferAttributes<Event>> {
   declare id: string;
@@ -29,7 +29,7 @@ Event.init(
     },
   },
   {
-    tableName: 'events',
+    tableName: "events",
     timestamps: false,
     sequelize,
   }

@@ -1,10 +1,10 @@
-import * as express from 'express';
-import careRecipientController from '../controllers/careRecipient';
+import * as express from "express";
+import careRecipientController from "../controllers/careRecipient";
 
 const router = express.Router();
 
 router.get(
-  '/',
+  "/",
   (request: express.Request, response: express.Response): void => {
     // A limitation in express, action functions must return void
     // if it returns Promise<void>, the router cannot accept it
@@ -13,7 +13,7 @@ router.get(
 );
 
 router.get(
-  '/:recipientId?',
+  "/:recipientId?",
   (request: express.Request, response: express.Response): void => {
     // A limitation in express, action functions must return void
     // if it returns Promise<void>, the router cannot accept it
