@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders 1`] = `
+<footer
+  className="sc-gswNZR gbjSRG"
+>
+  <div
+    className="sc-bcXHqe iuWKlD"
+  >
+    <img
+      className="sc-dkrFOg iljGiE"
+      src="/images/birdie-logo.svg"
+      width="110"
+    />
+  </div>
+</footer>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders 1`] = `
+<div
+  className="sc-dkrFOg bicHXt"
+>
+  <div>
+    <img
+      alt="Test Card"
+      src="placeholder.png"
+    />
+  </div>
+  <div>
+    <h2>
+      Test Card
+    </h2>
+    <div
+      className="sc-gswNZR iKgoRj"
+    />
+    <p>
+      Birdie Client
+    </p>
+    <button
+      className="sc-bcXHqe anMuq"
+    >
+       Details 
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Event Timeline Element renders 1`] = `
+<div
+  className="vertical-timeline-element--work vertical-timeline-element"
+  id=""
+  style={null}
+>
+  <span
+    className="vertical-timeline-element-icon is-hidden"
+    onClick={null}
+    style={
+      Object {
+        "background": "#28b5bd",
+        "color": "#fff",
+      }
+    }
+  >
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+  </span>
+  <div
+    className="vertical-timeline-element-content is-hidden"
+    onClick={null}
+    style={
+      Object {
+        "background": "#28b5bd",
+        "color": "#fff",
+      }
+    }
+  >
+    <div
+      className="vertical-timeline-element-content-arrow"
+      style={
+        Object {
+          "borderRight": "7px solid #28b5bd",
+        }
+      }
+    />
+    <h3
+      className="vertical-timeline-element-title"
+    >
+      TASK COMPLETED
+    </h3>
+    <h4
+      className="vertical-timeline-element-subtitle"
+    >
+      Sun May 12 2019
+    </h4>
+    <div>
+      <p>
+        Please change my pad and give me a freshen up
+      </p>
+      <p>
+        Assist to change incontinence pants
+      </p>
+    </div>
+    <span
+      className="vertical-timeline-element-date"
+    >
+      
+    </span>
+  </div>
+</div>
+`;

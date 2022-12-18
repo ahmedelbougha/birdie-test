@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DashboardCard renders 1`] = `
+<div
+  className="sc-dkrFOg cMJSxv"
+>
+  <div>
+    <img
+      alt="Test Dashboard Card"
+      src="placeholder.png"
+    />
+  </div>
+  <div>
+    <h2>
+      Test Dashboard Card
+    </h2>
+  </div>
+</div>
+`;

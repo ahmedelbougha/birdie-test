@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders 1`] = `
+<header
+  className="sc-bcXHqe iGxVbr"
+>
+  <div
+    className="sc-hLBbgP huDSNd"
+  >
+    <nav
+      className="sc-gswNZR jbRmlb"
+    >
+      <img
+        className="sc-dkrFOg iljGiE"
+        src="/images/birdie-logo.svg"
+        width="110"
+      />
+    </nav>
+  </div>
+</header>
+`;

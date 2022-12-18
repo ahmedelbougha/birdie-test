@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Event Table renders 1`] = `
+<table
+  className="sc-bcXHqe fbxGRG"
+>
+  <tbody>
+    <tr>
+      <td>
+        alert qualified
+      </td>
+      <td>
+        5
+      </td>
+      <td>
+        alert raised
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        catheter observation
+      </td>
+      <td>
+        12
+      </td>
+      <td>
+        check in
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        check out
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        concern raised
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        fluid intake observation
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        food intake observation
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        general observation
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        incontinence pad observation
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        medication schedule created
+      </td>
+      <td>
+        10
+      </td>
+      <td>
+        medication schedule updated
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        mental health observation
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        mood observation
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        no medication observation received
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        physical health observation
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        regular medication maybe taken
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        regular medication not taken
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        regular medication partially taken
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        regular medication taken
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        task completed
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        task completion reverted
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        task schedule created
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        toilet visit recorded
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        visit cancelled
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        visit completed
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
