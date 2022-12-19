@@ -8,7 +8,6 @@ describe("Test event controller actions", () => {
       .expect("Content-Type", /json/)
       .expect(200)
       .expect(function (res) {
-        console.log(typeof res.body.data);
         expect(res.body.data).toBeInstanceOf(Array);
       });
   });

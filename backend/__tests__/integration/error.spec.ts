@@ -17,7 +17,6 @@ describe("Test error controller actions", () => {
       .get("/")
       .expect("Content-Type", /json/)
       .expect(function (res) {
-        console.log(res.statusCode);
         expect(res.statusCode).not.toBe(404);
       });
   });
