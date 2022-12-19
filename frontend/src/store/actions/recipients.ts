@@ -6,7 +6,6 @@ import {
   GET_EVENTS_RECIPIENT,
   SUCCESS_EVENTS_RECIPIENT,
 } from '../types';
-import { setLoading } from './general';
 
 export const getListRecipients = () => ({
   type: GET_LIST_RECIPIENTS,

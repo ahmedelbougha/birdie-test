@@ -72,6 +72,7 @@
     "@types/redux-saga": "^0.10.5",
     "@types/styled-components": "^5.1.26",
     "eslint": "^8.30.0",
+    "eslint-config-react-app": "^7.0.1",
     "jest-styled-components": "^7.1.1",
     "react-test-renderer": "^17.0.2",
     "redux-mock-store": "^1.5.4",

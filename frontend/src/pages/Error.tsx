@@ -1,4 +1,3 @@
-import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 import { StyledError } from '../components/styles/Error.styled';
 import { Error } from '../store/reducers/general.d';
 

@@ -8,7 +8,6 @@ import { getListRecipients } from '../store/actions/recipients';
 import { CareRecipient } from '../store/reducers/recipients.d';
 import { RootState } from '../store/index';
 import Card from '../components/Card';
-import ErrorPage from './Error';
 
 /**
  * Home page component
@@ -25,11 +24,6 @@ function Home(): JSX.Element {
   const recipients = useSelector((state: RootState): CareRecipient[] => {
     return state.recipients.data;
   });
-
-  // if the recipients variable is not array it means still loading
-  // if (!Array.isArray(recipients)) {
-  //   return <ErrorPage errorStatus={true} />;
-  // }
 
   // in case of successful call but no care recipient
   if (recipients.length === 0) {

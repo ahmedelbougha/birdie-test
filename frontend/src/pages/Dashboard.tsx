@@ -14,7 +14,6 @@ import DashboardCard from '../components/DashboardCard';
 import EventTimeline from '../components/EventTimeline';
 import EventTable from '../components/EventTable';
 import { buildEventTableEvents } from '../utils/functions';
-import { setLoading } from '../store/actions/general';
 
 /**
  * Dashboard component to display recipient complete information

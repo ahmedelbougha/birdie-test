@@ -3,7 +3,6 @@ import { call, put } from 'redux-saga/effects';
 import {
   successListRecipients,
   successSummaryRecipient,
-  successEventsRecipient,
 } from '../../../../store/actions/recipients';
 
 import { setLoading, setFetchFailed } from '../../../../store/actions/general';
@@ -11,13 +10,11 @@ import { setLoading, setFetchFailed } from '../../../../store/actions/general';
 import {
   requestListRecipients,
   requestSummaryRecipient,
-  requestEventsRecipient,
 } from '../../../../store/sagas/requests/recipients';
 
 import {
   handelListRecipients,
   handelSummaryRecipient,
-  handelEventRecipients,
 } from '../../../../store/sagas/handlers/recipients';
 
 jest.mock('redux-saga/effects');
