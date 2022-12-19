@@ -30,17 +30,15 @@ jobs:
           sudo /etc/init.d/mysql start
           mysql -e 'CREATE DATABASE ${{ env.DB_NAME }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
           mysql ${{ env.DB_NAME }} -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} < backend/dbseed/db.sql
-      - run: yarn --frozen-lockfile --cwd backend
-      - run: yarn --frozen-lockfile --cwd frontend
 
+      - name: Backend Fetching dependencies
+        run: cd backend && yarn --frozen-lockfile
       - name: Backend ESLint
-        run: yarn eslint --prefix backend
+        run: cd backend && yarn eslint
       - name: Backend Unit Tests
-        run: yarn test:unit --prefix backend
+        run: cd backend && yarn test:unit
       - name: Backend Integration Tests
-        run: yarn test:integration --prefix backend
-      - name: Backend Installing Dependencies
-        run: npm ci --prefix backend
+        run: cd backend && yarn test:integration
       - name: Backend Deployment
         uses: burnett01/rsync-deployments@5.1
         with:
@@ -51,14 +49,14 @@ jobs:
           remote_user: ubuntu
           remote_key: "${{ secrets.BIRDIE_SERVER_SSH_KEY }}"
 
+      - name: Frontend Fetching dependencies
+        run: cd frontend && yarn --frozen-lockfile
       - name: Frontend ESLint
-        run: yarn lint --prefix frontend
+        run: cd frontend && yarn lint
       - name: Frontend Unit Tests
-        run: yarn test --prefix frontend
-      - name: Frontend Installing Dependencies
-        run: npm ci --prefix frontend
+        run: cd frontend && yarn test
       - name: Frontend Build
-        run: yarn build --prefix frontend
+        run: cd frontend && yarn build
       - name: Frontend Deployment
         uses: burnett01/rsync-deployments@5.1
         with:
