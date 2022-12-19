@@ -30,15 +30,15 @@ jobs:
           sudo /etc/init.d/mysql start
           mysql -e 'CREATE DATABASE ${{ env.DB_NAME }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
           mysql ${{ env.DB_NAME }} -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} < backend/dbseed/db.sql
-      - run: npm ci --prefix backend
-      - run: npm ci --prefix frontend
+      - run: yarn --frozen-lockfile --cwd backend
+      - run: yarn --frozen-lockfile --cwd frontend
 
       - name: Backend ESLint
-        run: npm run eslint --prefix backend
+        run: yarn eslint --prefix backend
       - name: Backend Unit Tests
-        run: npm run test:unit --prefix backend
+        run: yarn test:unit --prefix backend
       - name: Backend Integration Tests
-        run: npm run test:integration --prefix backend
+        run: yarn test:integration --prefix backend
       - name: Backend Installing Dependencies
         run: npm ci --prefix backend
       - name: Backend Deployment
@@ -52,13 +52,13 @@ jobs:
           remote_key: "${{ secrets.BIRDIE_SERVER_SSH_KEY }}"
 
       - name: Frontend ESLint
-        run: npm run lint --prefix frontend
+        run: yarn lint --prefix frontend
       - name: Frontend Unit Tests
-        run: npm run test --prefix frontend
+        run: yarn test --prefix frontend
       - name: Frontend Installing Dependencies
         run: npm ci --prefix frontend
       - name: Frontend Build
-        run: npm run build --prefix frontend
+        run: yarn build --prefix frontend
       - name: Frontend Deployment
         uses: burnett01/rsync-deployments@5.1
         with:

@@ -6,5 +6,9 @@ const dbName = process.env.DB_NAME;
 const dbHost = process.env.DB_HOST;
 
 export default new Sequelize(
-  `mysql://${dbUser}:${dbPass}@${dbHost}:3306/${dbName}`
+  `mysql://${dbUser}:${dbPass}@${dbHost}:3306/${dbName}`,
+  {
+    // disable logging; default: console.log
+    logging: false,
+  }
 );

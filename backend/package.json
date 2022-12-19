@@ -11,8 +11,7 @@
   "scripts": {
     "clean": "rimraf lib && rimraf coverage",
     "format": "prettier --write \"{src,__tests__}/**/*.ts\" --trailing-comma es5",
-    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
-    "eslint": "eslint --ext js,ts,tsx src",
+    "eslint": "eslint --format=stylish-verbose --ext js,ts,tsx src",
     "test": "node -e \"console.log('Please run tests with either test:unit or test:integration')\"",
     "test:unit": "jest __tests__/unit",
     "test:integration": "jest __tests__/integration",
@@ -40,6 +39,7 @@
     "coveralls": "^3.1.0",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^7.2.0",
+    "eslint-formatter-stylish-verbose": "^0.0.1",
     "eslint-plugin-prettier": "^3.3.1",
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",
