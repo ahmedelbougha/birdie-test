@@ -53,6 +53,7 @@ function Dashboard(): JSX.Element {
   if (loading) {
     return <></>;
   }
+
   if (eventsRecipient.length === 0) {
     return (
       <StyledError>

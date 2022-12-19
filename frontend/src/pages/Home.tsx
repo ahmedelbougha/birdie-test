@@ -21,9 +21,13 @@ function Home(): JSX.Element {
     dispatch(getListRecipients());
   }, [dispatch]);
 
-  const recipients = useSelector((state: RootState): CareRecipient[] => {
-    return state.recipients.data;
+  const { recipients, loading } = useSelector((state: RootState): {recipients:CareRecipient[], loading:number} => {
+    return { recipients: state.recipients.data, ...state.general };
   });
+
+  if (loading) {
+    return <></>;
+  }
 
   // in case of successful call but no care recipient
   if (recipients.length === 0) {
