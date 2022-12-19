@@ -26,7 +26,7 @@ jobs:
       - run: npm run test:unit --prefix backend
       - name: Backend Integration Tests
       - run: npm run test:integration --prefix backend
-      - name: Backend Build
+      - name: Backend Installing Dependencies
       - run: npm ci --prefix backend
       - name: Backend Deployment
         uses: burnett01/rsync-deployments@5.1
@@ -42,8 +42,9 @@ jobs:
       - run: npm run lint --prefix frontend
       - name: Frontend Unit Tests
       - run: npm run test --prefix frontend
-      - name: Frontend Build
+      - name: Frontend Installing Dependencies
       - run: npm ci --prefix frontend
+      - name: Frontend Build
       - run: npm run build --prefix frontend
       - name: Frontend Deployment
         uses: burnett01/rsync-deployments@5.1
