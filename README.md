@@ -227,14 +227,16 @@ a. I took the approach of having 2 pages, one for the list of recipients and ano
 
 b. In the home page I displayed the list of recipients in a grid/card formats, recipient names or any personal data, so I decided to use the recipient id as name place holder.
 
-c. In the dashboard page I displayed a table that show counts of each event type of the recipient and a time line of events (limited to 20 events)
+c. In the dashboard page I displayed a summary table that shows counts of each event type of the recipient - as a kind of statistics - and a time line of events (limited to 20 events)
 
 d. The API call that retrieve recipient's event is limited to 20 events ordered by the timestamp descending
 
-e. No pager implemented as I'm only showing case of building APIs and and Frontend display, but I believe this would be a good improvement for the task.
+e. No pager implemented as I'm only showing case of building APIs and Frontend display, but I believe this would be a good improvement for the task.
 
-f. You may notice that the `count` in API call are not reflecting the actual returned count of records, I believe this is an improvement
+f. You may notice that the `count` in API call are not reflecting the actual returned count of records, I believe this is an improvement.
 
-g. I implemented Github action to fetch dependencies, check the linting, run the tests and deploy to a server for both Frontend and Backend, that way I made my builds and changes deployments to AWS server easier and smoother.
+g. In sagas I implemented 3 different request functions (frontend/store/sagas/requests/recipients.ts), I believe they should be merged into one requester function that is called with URL path as parameter, this is an improvement.
 
-h. If I have more time for this task, I would implement docker/docker-compose in order to make it easier to test.
+h. I implemented Github action to fetch dependencies, check the linting, run the tests and deploy to a server for both Frontend and Backend, that way I made my builds and changes deployments to AWS server easier and smoother.
+
+i. If I have more time for this task, I would implement docker/docker-compose in order to make it easier to test.
