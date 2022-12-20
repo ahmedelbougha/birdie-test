@@ -11,12 +11,12 @@
   "scripts": {
     "clean": "rimraf lib && rimraf coverage",
     "format": "prettier --write \"{src,__tests__}/**/*.ts\" --trailing-comma es5",
-    "eslint": "eslint --format=stylish-verbose --ext js,ts,tsx src",
+    "lint": "eslint --format=stylish-verbose --ext js,ts,tsx src",
     "test": "node -e \"console.log('Please run tests with either test:unit or test:integration')\"",
     "test:unit": "jest __tests__/unit",
     "test:integration": "jest __tests__/integration --force-exit",
     "test:watch": "jest --watch",
-    "dev": "nodemon",
+    "dev": "DB_ENABLE_LOGS=true nodemon",
     "start": "ts-node src/index.ts"
   },
   "dependencies": {
