@@ -1,5 +1,6 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import eventService from "../services/event";
+import { Status } from "../types";
 
 /**
  * Controller function to get care recipients
@@ -8,20 +9,17 @@ import eventService from "../services/event";
  */
 export async function getRecipients(
   _: Request,
-  response: Response
+  response: Response,
+  next: NextFunction
 ): Promise<void> {
   try {
     // fetching recipients from the database
     const events = await eventService.fetchRecipients(0, 10);
-    response.status(200).json({
+    response.status(Status.OK_CODE).json({
       data: events.recipients,
     });
-  } catch (error) {
-    response.status(500).json({
-      // this is for testing purpose, the error should be logged instead and
-      // return "unknown error"
-      error,
-    });
+  } catch (error: any) {
+    next(error);
   }
 }
 
@@ -32,21 +30,19 @@ export async function getRecipients(
  */
 export async function getRecipientSummary(
   request: Request,
-  response: Response
+  response: Response,
+  next: NextFunction
 ): Promise<void> {
   try {
     // fetching recipient's summary from the database
     const recipientSummary = await eventService.fetchRecipientSummary(
       request.params.recipientId
     );
-    response.status(200).json({
+    response.status(Status.OK_CODE).json({
       data: recipientSummary,
     });
-  } catch (error) {
-    response.status(500).json({
-      // this is for testing purpose, the error should be logged instead and return "unknown error"
-      error,
-    });
+  } catch (error: any) {
+    next(error);
   }
 }
 export default { getRecipients, getRecipientSummary };

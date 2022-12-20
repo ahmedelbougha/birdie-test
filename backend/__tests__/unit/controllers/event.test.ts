@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 import eventController from "../../../src/controllers/event";
 import eventService from "../../../src/services/event";
 import Event from "../../../src/models/event";
@@ -6,6 +6,7 @@ import mocks from "../../mocks/objects";
 
 let mockedFetchEvents: any, request: any, response: any, responseObject: any;
 
+const next = jest.fn();
 const fetchEventsReturn = {
   events: [
     {
@@ -44,7 +45,11 @@ afterEach(() => {
 
 describe("Event Controller - Get Events", () => {
   it("Should call get events with recipient id", async () => {
-    await eventController.getEvents(request as Request, response as Response);
+    await eventController.getEvents(
+      request as Request,
+      response as Response,
+      next as NextFunction
+    );
     expect(eventService.fetchEvents).toBeCalledTimes(1);
     expect(eventService.fetchEvents).toBeCalledWith(0, 20, mocks.recipientId);
     expect(responseObject.statusCode).toEqual(200);
@@ -55,7 +60,11 @@ describe("Event Controller - Get Events", () => {
   });
   it("Should call get events with recipient id undefined", async () => {
     request.params = {};
-    await eventController.getEvents(request as Request, response as Response);
+    await eventController.getEvents(
+      request as Request,
+      response as Response,
+      next as NextFunction
+    );
     expect(eventService.fetchEvents).toBeCalledTimes(1);
     expect(eventService.fetchEvents).toBeCalledWith(0, 20, undefined);
     expect(responseObject.statusCode).toEqual(200);
@@ -65,10 +74,19 @@ describe("Event Controller - Get Events", () => {
     });
   });
 
-  it("Should force 500 error", async () => {
+  it("Should force next function to be called with error", async () => {
     request = {};
-    await eventController.getEvents(request as Request, response as Response);
+    await eventController.getEvents(
+      request as Request,
+      response as Response,
+      next as NextFunction
+    );
     expect(eventService.fetchEvents).not.toBeCalled();
-    expect(responseObject.statusCode).toEqual(500);
+    expect(next).toBeCalled();
+    expect(next).toBeCalledWith(
+      new TypeError(
+        "Cannot read properties of undefined (reading 'recipientId')"
+      )
+    );
   });
 });

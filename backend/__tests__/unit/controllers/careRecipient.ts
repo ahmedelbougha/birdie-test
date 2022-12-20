@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 import careRecipientController from "../../../src/controllers/careRecipient";
 import eventService from "../../../src/services/event";
 import Event from "../../../src/models/event";
@@ -6,6 +6,7 @@ import mocks from "../../mocks/objects";
 
 let mockedFetchRecipients: any,
   mockedFetchRecipientSummary: any,
+  next: any,
   request: any,
   response: any,
   responseObject: any;
@@ -65,7 +66,8 @@ describe("Care Recipient Controller - Get Recipients", () => {
   it("Should get all recipients", async () => {
     await careRecipientController.getRecipients(
       request as Request,
-      response as Response
+      response as Response,
+      next as NextFunction
     );
     expect(eventService.fetchRecipients).toBeCalledTimes(1);
     expect(eventService.fetchRecipients).toBeCalledWith(0, 10);
@@ -81,7 +83,8 @@ describe("Care Recipient Controller - Get Recipients", () => {
     };
     await careRecipientController.getRecipientSummary(
       request as Request,
-      response as Response
+      response as Response,
+      next as NextFunction
     );
     expect(eventService.fetchRecipientSummary).toBeCalledTimes(1);
     expect(eventService.fetchRecipientSummary).toBeCalledWith(

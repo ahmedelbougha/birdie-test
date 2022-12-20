@@ -1,23 +1,23 @@
-import * as express from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import careRecipientController from "../controllers/careRecipient";
 
-const router = express.Router();
+const router = Router();
 
 router.get(
   "/",
-  (request: express.Request, response: express.Response): void => {
+  (request: Request, response: Response, next: NextFunction): void => {
     // A limitation in express, action functions must return void
     // if it returns Promise<void>, the router cannot accept it
-    void careRecipientController.getRecipients(request, response);
+    void careRecipientController.getRecipients(request, response, next);
   }
 );
 
 router.get(
   "/:recipientId?",
-  (request: express.Request, response: express.Response): void => {
+  (request: Request, response: Response, next: NextFunction): void => {
     // A limitation in express, action functions must return void
     // if it returns Promise<void>, the router cannot accept it
-    void careRecipientController.getRecipientSummary(request, response);
+    void careRecipientController.getRecipientSummary(request, response, next);
   }
 );
 

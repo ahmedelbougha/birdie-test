@@ -1,5 +1,7 @@
 import { Sequelize } from "sequelize";
 import Event from "../models/event";
+import ApiError from "../exceptions/apiError";
+import { Status } from "../types";
 
 type recipientSummary = {
   event_type: string;
@@ -25,6 +27,12 @@ const fetchEvents = async (
     where: { ...(recipientId && { care_recipient_id: recipientId }) },
     order: [["timeStamp", "DESC"]],
   });
+
+  // passing 404 in case no records found
+  if (count === 0) {
+    throw new ApiError(Status.NOT_FOUND_MESSAGE, Status.NOT_FOUND_CODE);
+  }
+
   return { events: rows, count };
 };
 
@@ -70,6 +78,11 @@ const fetchRecipientSummary = async (
     group: ["care_recipient_id", "event_type"],
     having: { care_recipient_id: recipientId },
   });
+
+  // passing 404 in case no records found
+  if (rows.length === 0) {
+    throw new ApiError(Status.NOT_FOUND_MESSAGE, Status.NOT_FOUND_CODE);
+  }
 
   const recipientSummary = <recipientSummary[]>(
     (<unknown>rows.map((row) => ({ ...row.dataValues })))

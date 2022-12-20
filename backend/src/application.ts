@@ -3,6 +3,7 @@ import * as cors from "cors";
 import "dotenv/config";
 import { pingController } from "./controllers/ping";
 import errorController from "./controllers/error";
+import errorMiddleware from "./middleware/error";
 import eventRoutes from "./routes/event";
 import recipientRoutes from "./routes/recipient";
 
@@ -13,5 +14,6 @@ app.use(cors());
 app.use("/events", eventRoutes);
 app.use("/recipients", recipientRoutes);
 app.use(errorController.notFound);
+app.use(errorMiddleware);
 
 export default app;

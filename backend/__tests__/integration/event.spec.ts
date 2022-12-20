@@ -14,7 +14,7 @@ describe("Test event controller actions", () => {
 
   it("Get /events/{recipientId} should return recipient's events with status 200", async () => {
     await request(app)
-      .get("/events/not-found-recipient-id")
+      .get("/events/df50cac5-293c-490d-a06c-ee26796f850d")
       .expect("Content-Type", /json/)
       .expect(200)
       .expect(function (res) {
@@ -34,10 +34,10 @@ describe("Test event controller actions", () => {
     await request(app)
       .get("/events/not-found-recipient-id")
       .expect("Content-Type", /json/)
-      .expect(200)
+      .expect(404)
       .expect(function (res) {
-        expect(res.body.data).toBeInstanceOf(Array);
-        expect(res.body.data).toEqual([]);
+        expect(res.body.data).toBe(undefined);
+        expect(res.body.message).toBe("Not Found");
       });
   });
 });

@@ -8,7 +8,7 @@ describe("Test error controller actions", () => {
       .expect("Content-Type", /json/)
       .expect(404)
       .expect(function (res) {
-        expect(res.body.error).toBe("Not found");
+        expect(res.body.message).toBe("Not Found");
       });
   });
 
