@@ -73,8 +73,13 @@ This could mean presenting it in the following forms:
 
 # Challenge Solution and Explanation
 
+## Deployments
+The application was deployed to AWS on the following domains:
+
+1. Front end: http://birdie.front.aelbougha.online/
+2. Back end: http://birdie.aelbougha.online/
 ## Postman Collection
-You can find a Postman collection [here] (https://documenter.getpostman.com/view/1490807/2s8Z6sbGA1)
+You can find a Postman collection [here](https://documenter.getpostman.com/view/1490807/2s8Z6sbGA1)
 ## Set up
 Here's the technical stack that I used while working on the challenge:
 ### Front end
@@ -230,6 +235,6 @@ e. No pager implemented as I'm only showing case of building APIs and and Fronte
 
 f. You may notice that the `count` in API call are not reflecting the actual returned count of records, I believe this is an improvement
 
-g. I implemented Github action to fetch dependencies, check the linting, run the tests and deploy to a server for both Frontend and Backend, that way I made my build and changes deployments easier and smoother.
+g. I implemented Github action to fetch dependencies, check the linting, run the tests and deploy to a server for both Frontend and Backend, that way I made my builds and changes deployments to AWS server easier and smoother.
 
 h. If I have more time for this task, I would implement docker/docker-compose in order to make it easier to test.
