@@ -1,19 +1,19 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import {
   getSummaryRecipient,
   getEventsRecipient,
-} from '../store/actions/recipients';
-import { Container } from '../components/styles/Container.styled';
-import { StyledError } from '../components/styles/Error.styled';
-import { CardsWrapper } from '../components/styles/CardsWrapper.styled';
-import { Summary, Event } from '../store/reducers/recipients.d';
-import { RootState } from '../store/index';
-import DashboardCard from '../components/DashboardCard';
-import EventTimeline from '../components/EventTimeline';
-import EventTable from '../components/EventTable';
-import { buildEventTableEvents } from '../utils/functions';
+} from "../store/actions/recipients";
+import { Container } from "../components/styles/Container.styled";
+import { StyledError } from "../components/styles/Error.styled";
+import { CardsWrapper } from "../components/styles/CardsWrapper.styled";
+import { Summary, Event } from "../store/reducers/recipients.d";
+import { RootState } from "../store/index";
+import DashboardCard from "../components/DashboardCard";
+import EventTimeline from "../components/EventTimeline";
+import EventTable from "../components/EventTable";
+import { buildEventTableEvents } from "../utils/functions";
 
 /**
  * Dashboard component to display recipient complete information
@@ -25,8 +25,20 @@ function Dashboard(): JSX.Element {
   let eventTypes: string[][] = buildEventTableEvents();
   let { recipientId } = useParams();
 
+  const { summaryRecipient, eventsRecipient } = useSelector(
+    (
+      state: RootState
+    ): {
+      summaryRecipient: Summary;
+      eventsRecipient: Event[];
+
+    } => {
+      return state.recipients;
+    }
+  );
+
   useEffect(() => {
-    if (recipientId) {
+    if (recipientId && !eventsRecipient) {
       // get the summary of recipient events (counts)
       // used in EventTable and using the recipient id in DashboardCard (due to we don't have access to the name of
       // the care recipient)
@@ -36,21 +48,9 @@ function Dashboard(): JSX.Element {
       // used in the EventTimeline
       dispatch(getEventsRecipient(recipientId));
     }
-  }, [recipientId, dispatch]);
+  }, [recipientId, dispatch, eventsRecipient]);
 
-  const { summaryRecipient, eventsRecipient, loading } = useSelector(
-    (
-      state: RootState
-    ): {
-      summaryRecipient: Summary;
-      eventsRecipient: Event[];
-      loading: number;
-    } => {
-      return { ...state.recipients, ...state.general };
-    }
-  );
-
-  if (loading) {
+  if (!eventsRecipient) {
     return <></>;
   }
 

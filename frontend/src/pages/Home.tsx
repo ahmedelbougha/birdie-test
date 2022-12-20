@@ -16,16 +16,19 @@ import Card from '../components/Card';
 function Home(): JSX.Element {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    // get the list of recipients
-    dispatch(getListRecipients());
-  }, [dispatch]);
-
-  const { recipients, loading } = useSelector((state: RootState): {recipients:CareRecipient[], loading:number} => {
-    return { recipients: state.recipients.data, ...state.general };
+  const recipients  = useSelector((state: RootState): CareRecipient[] => {
+    return state.recipients.data;
   });
 
-  if (loading) {
+  useEffect(() => {
+    // get the list of recipients
+    if (!recipients) {
+      dispatch(getListRecipients());
+    }
+  }, [dispatch, recipients]);
+
+
+  if (!recipients) {
     return <></>;
   }
 

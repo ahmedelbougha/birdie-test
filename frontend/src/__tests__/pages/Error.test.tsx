@@ -6,7 +6,7 @@ const router = createBrowserRouter([
   {
     // dashboard page
     path: '/',
-    element: <ErrorPage />,
+    element: <ErrorPage errorStatus={true}/>,
   },
 ]);
 

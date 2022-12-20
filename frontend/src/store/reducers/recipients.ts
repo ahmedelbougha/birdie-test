@@ -6,9 +6,9 @@ import {
 import { CareRecipient } from './recipients.d';
 
 const initialState = {
-  data: [],
-  summaryRecipient: {},
-  eventsRecipient: [],
+  data: null,
+  summaryRecipient: null,
+  eventsRecipient: null,
 };
 /**
  * Recipient reducer to get

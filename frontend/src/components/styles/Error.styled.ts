@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledError = styled.div`
-  border-radius: 50%;
   width: 100%;
-  margin: 22vh auto;
+  margin: 0 auto;
   text-align: center;
 
   h1 {

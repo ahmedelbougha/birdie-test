@@ -337,7 +337,7 @@ Array [
 
 exports[`Dashboard Page Dashboard page in initial state 1`] = `
 <div
-  className="sc-gswNZR kkvFUJ"
+  className="sc-gswNZR hPeLOh"
 >
   <h2>
     There's no matching care recipients records!

@@ -1,26 +1,26 @@
-import { useSelector } from 'react-redux';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomePage from './pages/Home';
-import DashboardPage from './pages/Dashboard';
-import Spinner from './components/Spinner';
-import ErrorPage from './pages/Error';
-import { RootState } from './store/index';
+import { useSelector } from "react-redux";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./pages/Home";
+import DashboardPage from "./pages/Dashboard";
+import Spinner from "./components/Spinner";
+import ErrorPage from "./pages/Error";
+import { RootState } from "./store/index";
 
 const router = createBrowserRouter([
   {
     // error page for any non existing page
-    path: '*',
+    path: "*",
     element: <ErrorPage errorStatus={true} />,
   },
   {
     // home page
-    path: '/',
+    path: "/",
     element: <HomePage />,
     errorElement: <ErrorPage errorStatus={true} />,
   },
   {
     // dashboard page
-    path: '/dashboard/:recipientId',
+    path: "/dashboard/:recipientId",
     element: <DashboardPage />,
     errorElement: <ErrorPage errorStatus={true} />,
   },
@@ -30,7 +30,7 @@ function App() {
   const { loading, error, errorStatus } = useSelector(
     (
       state: RootState
-    ): { error: unknown; errorStatus: boolean; loading: boolean } => {
+    ): { error: unknown; errorStatus: boolean; loading: number } => {
       // get errors
       const error = state.general.error;
       // get loading status
@@ -42,10 +42,12 @@ function App() {
   if (errorStatus) {
     return <ErrorPage error={error} errorStatus={errorStatus} />;
   }
+
+  if (loading > 0) {
+    return <Spinner />;
+  }
   return (
     <>
-      {!!loading && <Spinner />}
-
       <RouterProvider router={router} fallbackElement={<Spinner />} />
     </>
   );
