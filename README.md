@@ -237,7 +237,7 @@ f. You may notice that the `count` in API call are not reflecting the actual ret
 
 g. In sagas I implemented 3 different request functions (frontend/store/sagas/requests/recipients.ts), I believe they should be merged into one requester function that is called with URL path as parameter, this is an improvement.
 
-h. Current, `Import` statements are not perfect, it's better to re-export the default component import in index file and import from that index file i.e. `export {default as X} from './XComponent'`, that way we can import the componets from one file instead of spreading them out in each component.
+h. h. Currently, `Import` statements are not perfect, it's better to re-export the default component import in the index file and import from that index file i.e. `export { default as X } from './XComponent'`, that way we can import the components from one file instead of spreading them out in each component.
 
 j. I implemented Github action to fetch dependencies, check the linting, run the tests and deploy to a server for both Frontend and Backend, that way I made my builds and changes deployments to AWS server easier and smoother.
 
