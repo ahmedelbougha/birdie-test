@@ -2,19 +2,19 @@ import { call, put } from "redux-saga/effects";
 
 import {
   successListRecipients,
-  successSummaryRecipient,
+  successSummaryRecipient
 } from "../../../../store/actions/recipients";
 
-import { setLoading, setFetchFailed } from "../../../../store/actions/general";
+import { setFetchFailed, setLoading } from "../../../../store/actions/general";
 
 import {
   requestListRecipients,
-  requestSummaryRecipient,
+  requestSummaryRecipient
 } from "../../../../store/sagas/requests/recipients";
 
 import {
   handelListRecipients,
-  handelSummaryRecipient,
+  handelSummaryRecipient
 } from "../../../../store/sagas/handlers/recipients";
 
 jest.mock("redux-saga/effects");
@@ -73,7 +73,7 @@ describe("Sagas handlers", () => {
       2,
       setFetchFailed({
         error: new TypeError(
-          "Cannot read properties of undefined (reading 'data')"
+          "Cannot read property 'data' of undefined"
         ),
         errorStatus: true,
       } as any)

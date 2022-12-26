@@ -6,10 +6,10 @@ Array [
     Welcome to Birdie customer portal.
   </h2>,
   <div
-    className="sc-bcXHqe gXVBWp"
+    className="sc-jSUZER llnjdp"
   >
     <div
-      className="sc-eDvSVe iXQdcB"
+      className="sc-dkrFOg bicHXt"
     >
       <div>
         <img
@@ -22,7 +22,7 @@ Array [
           Mr./Mrs. df50c
         </h2>
         <div
-          className="sc-hLBbgP geNomd"
+          className="sc-gswNZR iKgoRj"
         />
         <p>
           Birdie Client
@@ -32,7 +32,7 @@ Array [
           onClick={[Function]}
         >
           <button
-            className="sc-dkrFOg gARiqw"
+            className="sc-iBYQkv eTAFbx"
           >
              Details 
           </button>
@@ -40,7 +40,7 @@ Array [
       </div>
     </div>
     <div
-      className="sc-eDvSVe iXQdcB"
+      className="sc-dkrFOg bicHXt"
     >
       <div>
         <img
@@ -53,7 +53,7 @@ Array [
           Mr./Mrs. e3e2b
         </h2>
         <div
-          className="sc-hLBbgP geNomd"
+          className="sc-gswNZR iKgoRj"
         />
         <p>
           Birdie Client
@@ -63,7 +63,7 @@ Array [
           onClick={[Function]}
         >
           <button
-            className="sc-dkrFOg gARiqw"
+            className="sc-iBYQkv eTAFbx"
           >
              Details 
           </button>
@@ -71,7 +71,7 @@ Array [
       </div>
     </div>
     <div
-      className="sc-eDvSVe iXQdcB"
+      className="sc-dkrFOg bicHXt"
     >
       <div>
         <img
@@ -84,7 +84,7 @@ Array [
           Mr./Mrs. ad351
         </h2>
         <div
-          className="sc-hLBbgP geNomd"
+          className="sc-gswNZR iKgoRj"
         />
         <p>
           Birdie Client
@@ -94,7 +94,7 @@ Array [
           onClick={[Function]}
         >
           <button
-            className="sc-dkrFOg gARiqw"
+            className="sc-iBYQkv eTAFbx"
           >
              Details 
           </button>
@@ -107,7 +107,7 @@ Array [
 
 exports[`Home Page Home page in initial state 1`] = `
 <div
-  className="sc-gswNZR hPeLOh"
+  className="sc-bcXHqe iraQWx"
 >
   <h2>
     There's no care recipients records in the time being!

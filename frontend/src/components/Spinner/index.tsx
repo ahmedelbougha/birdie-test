@@ -1,5 +1,5 @@
-import { StyledSpinner } from './styles/Spinner.styled';
-import { Container } from './styles/Container.styled';
+import { Container } from '../styles/Container.styled';
+import StyledSpinner from './Spinner.styled';
 
 export default function Spinner() {
   return (

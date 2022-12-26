@@ -1,10 +1,8 @@
 import { useSelector } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/Home";
-import DashboardPage from "./pages/Dashboard";
 import Spinner from "./components/Spinner";
-import ErrorPage from "./pages/Error";
-import { RootState } from "./store/index";
+import { DashboardPage, ErrorPage, HomePage } from "./pages";
+import { RootState } from "./store";
 
 const router = createBrowserRouter([
   {

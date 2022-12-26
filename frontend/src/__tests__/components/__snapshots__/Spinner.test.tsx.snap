@@ -2,10 +2,10 @@
 
 exports[`Spinner renders 1`] = `
 <div
-  className="sc-gswNZR lhJxqP"
+  className="sc-bcXHqe iuWKlD"
 >
   <div
-    className="sc-bcXHqe exUSDF"
+    className="sc-gswNZR jcHCHp"
   />
 </div>
 `;

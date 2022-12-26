@@ -1,18 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import {
-  getSummaryRecipient,
-  getEventsRecipient,
-} from "../store/actions/recipients";
+import DashboardCard from "../components/DashboardCard";
+import EventTable from "../components/EventTable";
+import EventTimeline from "../components/EventTimeline";
+import { CardsWrapper } from "../components/styles/CardsWrapper.styled";
 import { Container } from "../components/styles/Container.styled";
 import { StyledError } from "../components/styles/Error.styled";
-import { CardsWrapper } from "../components/styles/CardsWrapper.styled";
-import { Summary, Event } from "../store/reducers/recipients.d";
+import {
+  getEventsRecipient, getSummaryRecipient
+} from "../store/actions/recipients";
 import { RootState } from "../store/index";
-import DashboardCard from "../components/DashboardCard";
-import EventTimeline from "../components/EventTimeline";
-import EventTable from "../components/EventTable";
+import { Event, Summary } from "../store/reducers/recipients.d";
 import { buildEventTableEvents } from "../utils/functions";
 
 /**
@@ -31,14 +30,19 @@ function Dashboard(): JSX.Element {
     ): {
       summaryRecipient: Summary;
       eventsRecipient: Event[];
-
     } => {
       return state.recipients;
     }
   );
 
   useEffect(() => {
-    if (recipientId && !eventsRecipient) {
+    // run dispatches in case of recipientId is there and
+    // no data coming from selectors or data coming from selector
+    // contain different recipientId
+    if (
+      recipientId &&
+      (!summaryRecipient || summaryRecipient.care_recipient_id !== recipientId)
+    ) {
       // get the summary of recipient events (counts)
       // used in EventTable and using the recipient id in DashboardCard (due to we don't have access to the name of
       // the care recipient)
@@ -48,7 +52,7 @@ function Dashboard(): JSX.Element {
       // used in the EventTimeline
       dispatch(getEventsRecipient(recipientId));
     }
-  }, [recipientId, dispatch, eventsRecipient]);
+  }, [dispatch, recipientId, summaryRecipient]);
 
   if (!eventsRecipient) {
     return <></>;
