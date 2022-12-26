@@ -73,7 +73,7 @@ describe("Sagas handlers", () => {
       2,
       setFetchFailed({
         error: new TypeError(
-          "Cannot read property 'data' of undefined"
+          "Cannot read properties of undefined (reading 'data')"
         ),
         errorStatus: true,
       } as any)
