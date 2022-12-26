@@ -57,7 +57,7 @@ jobs:
           remote_user: ubuntu
           remote_key: "${{ secrets.BIRDIE_SERVER_SSH_KEY }}"
 
-Frontend:
+  Frontend:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     strategy:
