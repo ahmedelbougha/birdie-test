@@ -16,7 +16,7 @@ env:
 
 jobs:
 
-  build:
+  Backend:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     strategy:
@@ -25,14 +25,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: Cache Dependencies
+        id: cache-dependencies
+        uses: actions/cache@v3
+        with:
+          path: 'backend/node_modules'
+          key: ${{ runner.os }}-backend-node-${{ hashFiles('backend/yarn-lock.json') }}
+
+      - name: Backend Fetching dependencies
+        run: cd backend && yarn --frozen-lockfile
+
       - name: Set up MySQL
         run: |
           sudo /etc/init.d/mysql start
           mysql -e 'CREATE DATABASE ${{ env.DB_NAME }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
           mysql ${{ env.DB_NAME }} -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} < backend/dbseed/db.sql
 
-      - name: Backend Fetching dependencies
-        run: cd backend && yarn --frozen-lockfile
       - name: Backend ESLint
         run: cd backend && yarn lint
       - name: Backend Unit Tests
@@ -49,8 +57,25 @@ jobs:
           remote_user: ubuntu
           remote_key: "${{ secrets.BIRDIE_SERVER_SSH_KEY }}"
 
+Frontend:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cache Dependencies
+        id: cache-dependencies
+        uses: actions/cache@v3
+        with:
+          path: 'frontend/node_modules'
+          key: ${{ runner.os }}-frontend-node-${{ hashFiles('frontend/yarn-lock.json') }}
+
       - name: Frontend Fetching dependencies
         run: cd frontend && yarn --frozen-lockfile
+
       - name: Frontend ESLint
         run: cd frontend && yarn lint
       - name: Frontend Unit Tests
