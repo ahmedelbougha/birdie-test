@@ -2,17 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
-import { Layout } from "./components/styles/Layout.styled";
-import { Container } from "./components/styles/Container.styled";
-
-import { theme } from "./utils/constants";
-import GlobalStyles from "./components/styles/Global.styled";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
 import App from "./App";
-import store from "./store/index";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import { Container } from "./components/styles/Container.styled";
+import GlobalStyles from "./components/styles/Global.styled";
+import { Layout } from "./components/styles/Layout.styled";
 import reportWebVitals from "./reportWebVitals";
+import store from "./store/index";
+import { theme } from "./utils/constants";
 
 ReactDOM.render(
   <React.StrictMode>

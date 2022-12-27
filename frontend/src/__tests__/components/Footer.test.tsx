@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
-import { theme } from '../../utils/constants';
 import { ThemeProvider } from 'styled-components';
 import Footer from '../../components/Footer';
+import { theme } from '../../utils/constants';
 
 describe('Footer', () => {
   it('renders', () => {

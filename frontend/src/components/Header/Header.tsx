@@ -1,11 +1,11 @@
 import {
   StyledHeader,
   StyledHeaderLogo,
-  StyledNav,
-} from './styles/Header.styled';
-import { Container } from './styles/Container.styled';
+  StyledNav
+} from '.';
+import { Container } from '../styles/Container.styled';
 
-export default function Header() {
+export function Header() {
   return (
     <StyledHeader>
       <Container>

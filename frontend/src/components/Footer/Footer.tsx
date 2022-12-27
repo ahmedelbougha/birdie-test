@@ -1,7 +1,7 @@
-import { Container } from './styles/Container.styled';
-import { StyledFooter, StyledFooterLogo } from './styles/Footer.styled';
+import { StyledFooter, StyledFooterLogo } from '.';
+import { Container } from '../styles/Container.styled';
 
-export default function Footer() {
+export function Footer() {
   return (
     <StyledFooter>
       <Container>

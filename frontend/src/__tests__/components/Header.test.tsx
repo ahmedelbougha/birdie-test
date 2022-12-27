@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
-import { theme } from '../../utils/constants';
 import { ThemeProvider } from 'styled-components';
 import Header from '../../components/Header';
+import { theme } from '../../utils/constants';
 
 describe('Header', () => {
   it('renders', () => {
