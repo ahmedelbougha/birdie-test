@@ -1,8 +1,7 @@
-import { StyledTable } from './styles/Table.styled';
-import { TableProps } from './EventTable.d';
 import { Fragment } from 'react';
+import { StyledTable, TableProps } from '.';
 
-export default function EventTable({ eventTypes, summaryTypes }: TableProps) {
+export function EventTable({ eventTypes, summaryTypes }: TableProps) {
   // Below building of the table row by row
   // Each row shall contain 2 event types
   return (

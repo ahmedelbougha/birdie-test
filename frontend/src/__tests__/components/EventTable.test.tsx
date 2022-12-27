@@ -1,6 +1,5 @@
 import renderer from 'react-test-renderer';
-import EventTable from '../../components/EventTable';
-import { TableProps } from '../../components/EventTable.d';
+import EventTable, { TableProps } from '../../components/EventTable';
 import { buildEventTableEvents } from '../../utils/functions';
 
 const tableProps: TableProps = {
