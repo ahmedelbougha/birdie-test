@@ -1,6 +1,5 @@
 import renderer from 'react-test-renderer';
-import { EventTimelineElementProps } from '../../components/EventTimelineElement.d';
-import EventTimelineElement from '../../components/EventTimelineElement';
+import { EventTimelineElement, EventTimelineElementProps } from '../../components/EventTimeline';
 
 const timelineElementProps: EventTimelineElementProps = {
   event: {

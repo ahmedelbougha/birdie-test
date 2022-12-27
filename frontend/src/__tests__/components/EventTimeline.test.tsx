@@ -1,6 +1,5 @@
 import renderer from 'react-test-renderer';
-import EventTable from '../../components/EventTimeline';
-import { EventTimelineProps } from '../../components/EventTimeline.d';
+import EventTimeline, { EventTimelineProps } from '../../components/EventTimeline';
 
 const timelineProps: EventTimelineProps = {
   events: [
@@ -29,7 +28,7 @@ const timelineProps: EventTimelineProps = {
 
 describe('Event Timeline', () => {
   it('renders', () => {
-    const component = renderer.create(<EventTable {...timelineProps} />);
+    const component = renderer.create(<EventTimeline {...timelineProps} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -1,8 +1,7 @@
-import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import CheckCircle from '@material-ui/icons/CheckCircle';
-
-import { EventTypes } from '../utils/constants';
-import { EventTimelineElementProps } from './EventTimelineElement.d';
+import { VerticalTimelineElement } from 'react-vertical-timeline-component';
+import { EventTimelineElementProps } from '.';
+import { EventTypes } from '../../utils/constants';
 
 export default function EventTimelineElement({
   event,

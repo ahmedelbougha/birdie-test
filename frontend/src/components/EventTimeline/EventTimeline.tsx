@@ -1,13 +1,13 @@
+import StarIcon from '@material-ui/icons/Star';
 import {
   VerticalTimeline,
-  VerticalTimelineElement,
+  VerticalTimelineElement
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import StarIcon from '@material-ui/icons/Star';
+import { EventTimelineProps } from '.';
 import EventTimelineElement from './EventTimelineElement';
-import { EventTimelineProps } from './EventTimeline.d';
 
-export default function EventTimeline({ events }: EventTimelineProps) {
+export function EventTimeline({ events }: EventTimelineProps) {
   return (
     <VerticalTimeline>
       {events.map((event, index) => (
