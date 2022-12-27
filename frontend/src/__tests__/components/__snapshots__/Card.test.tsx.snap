@@ -2,7 +2,7 @@
 
 exports[`Card renders 1`] = `
 <div
-  className="sc-dkrFOg bicHXt"
+  className="sc-gswNZR eefQHT"
 >
   <div>
     <img
@@ -15,13 +15,13 @@ exports[`Card renders 1`] = `
       Test Card
     </h2>
     <div
-      className="sc-gswNZR iKgoRj"
+      className="sc-bcXHqe AOYhz"
     />
     <p>
       Birdie Client
     </p>
     <button
-      className="sc-bcXHqe anMuq"
+      className="sc-eDvSVe fDZQwA"
     >
        Details 
     </button>

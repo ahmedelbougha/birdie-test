@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { ThemeProps } from '../../types';
+import styled from "styled-components";
+import { ThemeProps } from "../../types";
 
 export const StyledCardDivider = styled.div`
   width: 100%;
@@ -55,4 +55,14 @@ export const StyledDashboardCard = styled.div`
     flex: 1;
     text-align: center;
   }
+`;
+
+export const StyledCardsWrapper = styled.div`
+  width: 100%;
+  padding: 0 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;

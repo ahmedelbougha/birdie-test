@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { CardsWrapper } from '../components/styles/CardsWrapper.styled';
-import { StyledError } from '../components/styles/Error.styled';
+import Card, { CardsWrapper } from '../components/Card';
 import { Button } from '../components/styles/Button.styled';
+import { StyledError } from '../components/styles/Error.styled';
 import { getListRecipients } from '../store/actions/recipients';
-import { CareRecipient } from '../store/reducers/recipients.d';
 import { RootState } from '../store/index';
-import Card from '../components/Card';
+import { CareRecipient } from '../store/reducers/recipients.d';
 
 /**
  * Home page component

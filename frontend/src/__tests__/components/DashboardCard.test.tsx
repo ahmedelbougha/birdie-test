@@ -1,8 +1,7 @@
 import renderer from 'react-test-renderer';
-import { CardProps } from '../../components/Card.d';
-import { theme } from '../../utils/constants';
 import { ThemeProvider } from 'styled-components';
-import DashboardCard from '../../components/DashboardCard';
+import { CardProps, DashboardCard } from '../../components/Card';
+import { theme } from '../../utils/constants';
 
 const cardProps: CardProps = {
   title: 'Test Dashboard Card',

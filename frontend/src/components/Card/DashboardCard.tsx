@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { StyledDashboardCard } from './styles/Card.styled';
-import { CardProps } from './Card.d';
+import { CardProps, StyledDashboardCard } from '.';
 
 export default function DashboardCard({ title, image }: CardProps) {
   const themeContext = useContext(ThemeContext);

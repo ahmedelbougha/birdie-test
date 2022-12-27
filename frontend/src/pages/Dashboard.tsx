@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import DashboardCard from "../components/DashboardCard";
+import { CardsWrapper, DashboardCard } from "../components/Card";
 import EventTable from "../components/EventTable";
 import EventTimeline from "../components/EventTimeline";
-import { CardsWrapper } from "../components/styles/CardsWrapper.styled";
 import { Container } from "../components/styles/Container.styled";
 import { StyledError } from "../components/styles/Error.styled";
 import {

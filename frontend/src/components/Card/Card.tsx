@@ -1,14 +1,13 @@
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { StyledCard, StyledCardDivider } from './styles/Card.styled';
-import { CardProps } from './Card.d';
+import { CardProps, StyledCard, StyledCardDivider } from '.';
 
 /**
  * Card component for the care recipient to be displayed in the home page
  * @param CardProps
  * @returns JSX.Element
  */
-export default function Card({
+export function Card({
   title,
   image,
   children,

@@ -1,9 +1,8 @@
 import renderer from 'react-test-renderer';
-import { CardProps } from '../../components/Card.d';
-import { Button } from '../../components/styles/Button.styled';
-import Card from '../../components/Card';
-import { theme } from '../../utils/constants';
 import { ThemeProvider } from 'styled-components';
+import Card, { CardProps } from '../../components/Card';
+import { Button } from '../../components/styles/Button.styled';
+import { theme } from '../../utils/constants';
 
 const cardProps: CardProps = {
   title: 'Test Card',
