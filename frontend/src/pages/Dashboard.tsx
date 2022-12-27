@@ -4,8 +4,7 @@ import { useParams } from "react-router-dom";
 import { CardsWrapper, DashboardCard } from "../components/Card";
 import EventTable from "../components/EventTable";
 import EventTimeline from "../components/EventTimeline";
-import { Container } from "../components/styles/Container.styled";
-import { StyledError } from "../components/styles/Error.styled";
+import { Container, StyledError } from "../components/styles";
 import {
   getEventsRecipient, getSummaryRecipient
 } from "../store/actions/recipients";

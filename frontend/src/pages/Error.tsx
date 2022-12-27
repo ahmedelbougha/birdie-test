@@ -1,4 +1,4 @@
-import { StyledError } from '../components/styles/Error.styled';
+import { StyledError } from '../components/styles';
 import { Error } from '../store/reducers/general.d';
 
 export default function ErrorPage({

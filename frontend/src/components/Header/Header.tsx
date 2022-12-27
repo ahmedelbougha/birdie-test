@@ -3,7 +3,7 @@ import {
   StyledHeaderLogo,
   StyledNav
 } from '.';
-import { Container } from '../styles/Container.styled';
+import { Container } from '../styles';
 
 export function Header() {
   return (

@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import Card, { CardProps } from '../../components/Card';
-import { Button } from '../../components/styles/Button.styled';
+import { Button } from '../../components/styles';
 import { theme } from '../../utils/constants';
 
 const cardProps: CardProps = {

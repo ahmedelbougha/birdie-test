@@ -1,4 +1,4 @@
-import { Container } from '../styles/Container.styled';
+import { Container } from '../styles';
 import StyledSpinner from './Spinner.styled';
 
 export default function Spinner() {

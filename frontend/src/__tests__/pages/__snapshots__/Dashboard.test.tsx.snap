@@ -6,13 +6,13 @@ Array [
     Client Info
   </h2>,
   <div
-    className="sc-gKPRtg bGJDsP"
+    className="sc-gswNZR lhJxqP"
   >
     <div
-      className="sc-eDvSVe iTinCn"
+      className="sc-ftTHYK cGPzFQ"
     >
       <div
-        className="sc-hLBbgP fmnuXT"
+        className="sc-iBYQkv jhEleS"
       >
         <div>
           <img
@@ -27,7 +27,7 @@ Array [
         </div>
       </div>
       <table
-        className="sc-jSUZER ZnqIW"
+        className="sc-pyfCe kPzrAy"
       >
         <tbody>
           <tr>
@@ -337,7 +337,7 @@ Array [
 
 exports[`Dashboard Page Dashboard page in initial state 1`] = `
 <div
-  className="sc-bcXHqe iraQWx"
+  className="sc-dkrFOg cCvBJv"
 >
   <h2>
     There's no matching care recipients records!
