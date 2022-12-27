@@ -1,12 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { CardsWrapper, DashboardCard } from "../components/Card";
-import EventTable from "../components/EventTable";
-import EventTimeline from "../components/EventTimeline";
-import { Container, StyledError } from "../components/styles";
 import {
-  getEventsRecipient, getSummaryRecipient
+  CardsWrapper,
+  Container,
+  DashboardCard,
+  EventTable,
+  EventTimeline,
+  StyledError
+} from "../components";
+import {
+  getEventsRecipient,
+  getSummaryRecipient
 } from "../store/actions/recipients";
 import { RootState } from "../store/index";
 import { Event, Summary } from "../store/reducers/recipients.d";

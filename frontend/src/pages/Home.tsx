@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Card, { CardsWrapper } from '../components/Card';
-import { Button, StyledError } from '../components/styles';
+import { Button, Card, CardsWrapper, StyledError } from "../components";
 import { RootState } from '../store';
 import { getListRecipients } from '../store/actions/recipients';
 import { CareRecipient } from '../store/reducers/recipients.d';

@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { ThemeProps } from '../../types';
+import { createGlobalStyle } from "styled-components";
+import { ThemeProps } from "../../types";
 
 export const GlobalStyles = createGlobalStyle<ThemeProps>`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -27,5 +27,5 @@ export const GlobalStyles = createGlobalStyle<ThemeProps>`
   }
   img {
     max-width: 100%;
-}
+  }
 `;

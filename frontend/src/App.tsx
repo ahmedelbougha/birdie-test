@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Spinner from "./components/Spinner";
+import { Spinner } from "./components";
 import { DashboardPage, ErrorPage, HomePage } from "./pages";
 import { RootState } from "./store";
 
