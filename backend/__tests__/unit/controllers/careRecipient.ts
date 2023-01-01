@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from "express";
+import { NextFunction, Request, Response } from "express";
 import careRecipientController from "../../../src/controllers/careRecipient";
-import eventService from "../../../src/services/event";
 import Event from "../../../src/models/event";
+import eventService from "../../../src/services/event";
 import mocks from "../../mocks/objects";
 
 let mockedFetchRecipients: any,
@@ -29,16 +29,13 @@ const fetchRecipientSummaryReturn = {
   care_recipient_id: "df50cac5-293c-490d-a06c-ee26796f850d",
   recipient_summary: [
     {
-      event_type: "alert_raised",
-      event_type_count: 32,
+      alert_raised: 32,
     },
     {
-      event_type: "check_in",
-      event_type_count: 161,
+      check_in: 161,
     },
     {
-      event_type: "check_out",
-      event_type_count: 161,
+      check_out: 161,
     },
   ],
 };
@@ -54,7 +51,7 @@ beforeEach(() => {
 
   mockedFetchRecipientSummary = jest
     .spyOn(eventService, "fetchRecipientSummary")
-    .mockResolvedValue(fetchRecipientSummaryReturn);
+    .mockResolvedValue(<any>fetchRecipientSummaryReturn);
 });
 
 afterEach(() => {

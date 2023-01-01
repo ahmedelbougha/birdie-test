@@ -6,3 +6,7 @@ export enum Status {
   INTERNAL_SERVER_ERROR_CODE = 500,
   INTERNAL_SERVER_ERROR_MESSAGE = "Unexpected Error",
 }
+
+export interface RecipientSummary {
+  [key: string]: number;
+}

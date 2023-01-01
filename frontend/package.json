@@ -38,7 +38,7 @@
   },
   "jest": {
     "transformIgnorePatterns": [
-      "node_modules/(?!@shotgunjed)/"
+      "node_modules/(?!axios)/"
     ]
   },
   "browserslist": {

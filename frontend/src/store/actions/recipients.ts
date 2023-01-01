@@ -1,11 +1,11 @@
 import {
-  GET_LIST_RECIPIENTS,
-  SUCCESS_LIST_RECIPIENTS,
-  GET_SUMMARY_RECIPIENT,
-  SUCCESS_SUMMARY_RECIPIENT,
   GET_EVENTS_RECIPIENT,
+  GET_LIST_RECIPIENTS,
+  GET_SUMMARY_RECIPIENT,
   SUCCESS_EVENTS_RECIPIENT,
-} from '../types';
+  SUCCESS_LIST_RECIPIENTS,
+  SUCCESS_SUMMARY_RECIPIENT
+} from "../types";
 
 export const getListRecipients = () => ({
   type: GET_LIST_RECIPIENTS,
@@ -24,7 +24,7 @@ export const getSummaryRecipient = (recipientId: string) => ({
 });
 
 export const successSummaryRecipient = (
-  data: [{ care_recipient_id: string; recipient_summary: {} }]
+  data: [{ care_recipient_id: string; recipient_summary: [] }]
 ) => ({
   type: SUCCESS_SUMMARY_RECIPIENT,
   data: data,

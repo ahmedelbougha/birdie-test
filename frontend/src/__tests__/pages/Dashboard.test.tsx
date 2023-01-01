@@ -23,8 +23,8 @@ describe("Dashboard Page", () => {
     testStore = mockStore({
       recipients: {
         summaryRecipient: {
-          care_recipient_id: "some-recipient-id",
-          recipient_summary: {
+          recipientId: "some-recipient-id",
+          recipientSummary: {
             alert_qualified: "5",
             catheter_observation: "12",
             medication_schedule_created: "10",

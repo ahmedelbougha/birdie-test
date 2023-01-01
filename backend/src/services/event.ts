@@ -1,12 +1,7 @@
 import { Sequelize } from "sequelize";
-import Event from "../models/event";
 import ApiError from "../exceptions/apiError";
-import { Status } from "../types";
-
-type recipientSummary = {
-  event_type: string;
-  event_type_count: number;
-};
+import Event from "../models/event";
+import { RecipientSummary, Status } from "../types";
 
 /**
  * Fetching array of events with their counts
@@ -23,7 +18,7 @@ const fetchEvents = async (
   const { rows, count } = await Event.findAndCountAll({
     offset,
     limit,
-    // assigning empty where object in case there's no recipientId
+    // assigning empty "where" object in case there's no recipientId
     where: { ...(recipientId && { care_recipient_id: recipientId }) },
     order: [["timeStamp", "DESC"]],
   });
@@ -68,7 +63,7 @@ const fetchRecipientSummary = async (
   recipientId: string
 ): Promise<{
   care_recipient_id: string;
-  recipient_summary: recipientSummary[];
+  recipient_summary: RecipientSummary;
 }> => {
   const rows = await Event.findAll({
     attributes: [
@@ -84,13 +79,22 @@ const fetchRecipientSummary = async (
     throw new ApiError(Status.NOT_FOUND_MESSAGE, Status.NOT_FOUND_CODE);
   }
 
-  const recipientSummary = <recipientSummary[]>(
+  const recipientSummary = <{ event_type: string; event_type_count: number }[]>(
     (<unknown>rows.map((row) => ({ ...row.dataValues })))
+  );
+  // flattening the recipient_summary: restructuring the data for better consumption
+  // converting
+  // [{event_type: "a", event_type_count: 1}, {event_type: "b", event_type_count: 3}]
+  // to {a: 1, b: 3}
+  const flattenedRecipientSummary = recipientSummary.reduce(
+    (obj, item) =>
+      Object.assign(obj, { [item.event_type]: item.event_type_count }),
+    {}
   );
 
   return {
     care_recipient_id: recipientId,
-    recipient_summary: recipientSummary,
+    recipient_summary: flattenedRecipientSummary,
   };
 };
 

@@ -1,6 +1,4 @@
-import { CareRecipientSummary } from '../../store/reducers/recipients.d';
-
 export interface TableProps {
-  summaryTypes: CareRecipientSummary;
+  summaryTypes: { [key: string]: string };
   eventTypes: string[][];
 }

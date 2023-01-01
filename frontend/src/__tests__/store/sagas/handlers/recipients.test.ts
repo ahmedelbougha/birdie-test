@@ -8,9 +8,8 @@ import {
 import { setFetchFailed, setLoading } from "../../../../store/actions/general";
 
 import {
-  requestListRecipients,
-  requestSummaryRecipient
-} from "../../../../store/sagas/requests/recipients";
+  apiRequest
+} from "../../../../store/sagas/requests";
 
 import {
   handelListRecipients,
@@ -19,7 +18,7 @@ import {
 
 jest.mock("redux-saga/effects");
 jest.mock("../../../../store/actions/recipients");
-jest.mock("../../../../store/sagas/requests/recipients");
+jest.mock("../../../../store/sagas/requests");
 
 let recipientId = "some-recipient-id";
 
@@ -43,7 +42,8 @@ describe("Sagas handlers", () => {
     generatorCall.next();
     // call the requestListRecipient to run API call
     expect(call).toBeCalledTimes(1);
-    expect(call).toBeCalledWith(requestListRecipients);
+    // expect(call).toBeCalledWith(() => apiRequest(recipientId));
+    expect(call).toBeCalledWith(expect.any(Function));
     // this the second time to call "put" to set the list of recipients
     generatorCall.next(data);
     expect(put).toBeCalledTimes(2);
@@ -55,7 +55,7 @@ describe("Sagas handlers", () => {
   });
 
   it("should test handler for failed list of recipients", () => {
-    jest.fn(requestListRecipients).mockRejectedValue(new Error("test"));
+    jest.fn(apiRequest).mockRejectedValue(new Error("test"));
 
     const generatorCall = handelListRecipients();
     generatorCall.next();
@@ -65,7 +65,8 @@ describe("Sagas handlers", () => {
     generatorCall.next();
     // call the requestListRecipient to run API call
     expect(call).toBeCalledTimes(1);
-    expect(call).toBeCalledWith(requestListRecipients);
+    // expect(call).toBeCalledWith(() => apiRequest(recipientId));
+    expect(call).toBeCalledWith(expect.any(Function));
     generatorCall.next();
     // this is the second time to call "put" to set the fetch failure
     expect(put).toBeCalledTimes(2);
@@ -86,7 +87,7 @@ describe("Sagas handlers", () => {
 
   it("should test handler for success summary of recipient's events", () => {
     // mock for the original data returned by the request
-    const data = {
+    const response = {
       data: {
         data: {
           care_recipient_id: recipientId,
@@ -100,16 +101,6 @@ describe("Sagas handlers", () => {
       },
     };
 
-    // mock for the flattened the data
-    const flattenData = {
-      data: {
-        data: {
-          care_recipient_id: "some-recipient-id",
-          recipient_summary: { alert_raised: 32 },
-        },
-      },
-    };
-
     const generatorCall = handelSummaryRecipient({ recipientId } as any);
 
     generatorCall.next();
@@ -120,24 +111,24 @@ describe("Sagas handlers", () => {
 
     // should find a way to test this
     // it's being called as anonymous function
-    // expect(call).toBeCalledWith(() => requestSummaryRecipient(recipientId));
+    // expect(call).toBeCalledWith(() => apiRequest(`recipient/${recipientId}`));
     expect(call).toBeCalledWith(expect.any(Function));
-    generatorCall.next(data);
+    generatorCall.next(response);
     expect(put).toBeCalledTimes(2);
 
     // test that the generator function has flatten the data correctly
-    expect(data).toMatchObject(flattenData);
+    // expect(data).toMatchObject(flattenData);
     expect(put).toHaveBeenNthCalledWith(
       2,
-      successSummaryRecipient(data as any)
+      successSummaryRecipient(response.data as any)
     );
-    generatorCall.next(data);
+    generatorCall.next(response.data);
     expect(put).toBeCalledTimes(3);
     expect(put).toHaveBeenNthCalledWith(3, setLoading(false));
   });
 
   it("should test handler for failure summary of recipient's events", () => {
-    jest.fn(requestSummaryRecipient).mockRejectedValue(new Error("test"));
+    jest.fn(apiRequest).mockRejectedValue(new Error("test"));
 
     const generatorCall = handelSummaryRecipient({ recipientId } as any);
 
@@ -149,7 +140,7 @@ describe("Sagas handlers", () => {
 
     // should find a way to test this
     // it's being called as anonymous function
-    // expect(call).toBeCalledWith(() => requestSummaryRecipient(recipientId));
+    // expect(call).toBeCalledWith(() => apiRequest(`recipient/${recipientId}`));
     expect(call).toBeCalledWith(expect.any(Function));
     generatorCall.next({});
     expect(put).toBeCalledTimes(2);

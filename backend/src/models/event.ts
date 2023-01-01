@@ -1,4 +1,4 @@
-import { DataTypes, Model, InferAttributes } from "sequelize";
+import { DataTypes, InferAttributes, Model } from "sequelize";
 import sequelize from "../config/database";
 
 class Event extends Model<InferAttributes<Event>> {
