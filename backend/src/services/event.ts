@@ -32,7 +32,7 @@ const fetchEvents = async (
 };
 
 /**
- * Fetching array of recipient with their counts
+ * Fetching array of recipients
  *
  * @param {number} offset
  * @param {number} limit
