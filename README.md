@@ -127,6 +127,7 @@ Here's the technical stack that I used while working on the challenge:
    ```
 
 2. Start the React app  (Run the following commands within the `front-end` folder)
+
     a. copy env.example to .env and change the values of backend domain variable inside
     b. Install the dependencies
    ```bash
@@ -148,7 +149,7 @@ Here's the technical stack that I used while working on the challenge:
 The directory structure was meant to separate the concerns and responsibilities to keep the code maintainable.
 It may need improvements at some point if we are referring to real project:
 
-a. Example `frontend/components` directory may become confusing as the number of components and styled components becomes bigger. One suggestion is to put every component file altogether with its types file and styled component file in one directory, for example:
+a. Example `frontend/components` directory may become confusing as the number of components and styled components becomes bigger, that's why I moved to barrel exports, for example:
 ```
 Card
 |- Card.ts
@@ -187,31 +188,35 @@ backend/
 ### Front end
 ```
 frontend/
-|-- public
-|   `-- images
-`-- src
+|-- src
     |-- assets
     |   |-- images (contains the theme placeholder.png)
     |-- components (contains the main components, component types, and folder for styled components)
-    |   `-- styles (contains all of the styled components)
+    |   |-- Card
+    |   |-- EventTable
+    |   |-- EventTimeline
+    |   |-- Footer
+    |   |-- Header
+    |   |-- Spinner
+    |   `-- Styles (contains of general styled components)
     |-- pages (contains the 3 pages Error, Home and Dashboard)
     |-- store
     |   |-- actions (contains the redux actions)
     |   |-- reducers (contains the redux reducers)
     |   `-- sagas
-    |       |-- handlers (contains the sagas handlers/generators)
-    |       `-- requests (contains the sagas requests)
+    |       `-- handlers (contains the sagas handlers/generators)
     |-- __tests__
     |   |-- components (contains the components tests)
-    |   |   `-- __snapshots__  (contains the components snapshots)
-    |   |-- pages  (contains the pages tests)
-    |   |   `-- __snapshots__  (contains the pages snapshots)
-    |   `-- store
-    |       |-- actions  (contains the actions tests)
-    |       |-- reducers  (contains the reducers tests)
-    |       `-- sagas
-    |           |-- handlers (contains the handlers/generators tests)
-    |           `-- requests (contains the requests tests)
+    |   |   `-- __snapshots__ (contains the components snapshots)
+    |   |-- pages (contains the pages tests)
+    |   |   `-- __snapshots__ (contains the pages snapshots)
+    |   |-- store
+    |   |   |-- actions (contains the actions tests)
+    |   |   |-- reducers (contains the reducers tests)
+    |   |   `-- sagas
+    |   |       `-- handlers (contains the handlers/generators tests)
+    |   `-- utils (contains tests for utils functions)
+    |-- types (contains types )
     `-- utils (contains constants and functions)
 
 ```
@@ -219,27 +224,25 @@ frontend/
 ## Tests
 I built the tests to make a show case of how I can test the different components in backend and frontend.
 
-The test coverage of backend is around 83% for backend, the test for for frontend is covering both (components and pages) with snapshots and (redux actions/reducers and sagas) by unit tests.
+The test coverage of backend is around 83%, the test for for frontend is covering both (components and pages) with snapshots and (redux actions/reducers and sagas) by unit tests.
 
-Though, the test may need some improvements to cover some branched scenarios.
+Though, the test may need some improvements to cover scenarios.
 
 ## Notes and Explanations
-a. I took the approach of having 2 pages, one for the list of recipients and another for dashboard and detailed list of events.
+a. I created 2 pages, one for the list of recipients and another one for dashboard and detailed list of events.
 
-b. In the home page I displayed the list of recipients in a grid/card formats, recipient names or any personal data, so I decided to use the recipient id as name place holder.
+b. In the home page I displayed the list of recipients in a grid/card formats, there are no recipient names or any personal data, so I decided to use the recipient id as name placeholder.
 
 c. In the dashboard page I displayed a summary table that shows counts of each event type of the recipient - as a kind of statistics - and a time line of events (limited to 20 events)
 
-d. The API call that retrieve recipient's event is limited to 20 events ordered by the timestamp descending
+d. In frontend type descriptors of the components live in their component directories, but the other types live in the types/* directory
 
-e. No pager implemented as I'm only showing case of building APIs and Frontend display, but I believe this would be a good improvement for the task.
+e. The API call that retrieve recipient's event is limited to 20 events ordered by the timestamp descending
 
-f. You may notice that the `count` in API call are not reflecting the actual returned count of records, I believe this is an improvement.
+f. No pager implemented as I'm only showing case of building APIs and Frontend display, but I believe this would be a good improvement for the task.
 
-g. In sagas I implemented 3 different request functions (frontend/store/sagas/requests/recipients.ts), I believe they should be merged into one requester function that is called with URL path as parameter, this is an improvement.
+g. You may notice that the `count` in API call are not reflecting the actual returned count of records, I believe this is an improvement.
 
-h. Currently, `Import` statements are not perfect, it's better to re-export the default component import in the index file and import from that index file i.e. `export { default as X } from './XComponent'`, that way we can import the components from one file instead of spreading them out in each component.
+h. I implemented Github action to fetch dependencies, check the linting, run the tests and deploy to a server for both Frontend and Backend, that way I made my builds and changes deployments to AWS server easier and smoother.
 
-j. I implemented Github action to fetch dependencies, check the linting, run the tests and deploy to a server for both Frontend and Backend, that way I made my builds and changes deployments to AWS server easier and smoother.
-
-k. If I have more time for this task, I would implement docker/docker-compose in order to make it easier to test.
+i. I believe using docker/docker-compose would make the task easier to test.
