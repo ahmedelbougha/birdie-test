@@ -1,12 +1,12 @@
+import { AnyAction } from "redux";
 import {
-  SUCCESS_LIST_RECIPIENTS,
-  SUCCESS_SUMMARY_RECIPIENT,
   SUCCESS_EVENTS_RECIPIENT,
-} from '../types';
-import { CareRecipient } from './recipients.d';
+  SUCCESS_LIST_RECIPIENTS,
+  SUCCESS_SUMMARY_RECIPIENT
+} from "../types";
 
 const initialState = {
-  data: null,
+  list: null,
   summaryRecipient: null,
   eventsRecipient: null,
 };
@@ -19,17 +19,31 @@ const initialState = {
  * @param action
  * @returns
  */
-const recipientsReducer = (
-  state = initialState,
-  action: { type: string; data: CareRecipient[] }
-): any => {
+const recipientsReducer = (state = initialState, action: AnyAction): any => {
   switch (action.type) {
     case SUCCESS_LIST_RECIPIENTS:
-      return { ...state, data: action.data };
-    case SUCCESS_SUMMARY_RECIPIENT:
-      return { ...state, summaryRecipient: action.data };
+      return {
+        ...state,
+        // Renaming care_recipient_id to recipientId in order to keep
+        // the app's variable naming consistency
+        list: action.data.map((recipient: { care_recipient_id: string }) => {
+          return { recipientId: recipient.care_recipient_id };
+        }),
+      };
     case SUCCESS_EVENTS_RECIPIENT:
       return { ...state, eventsRecipient: action.data };
+    case SUCCESS_SUMMARY_RECIPIENT:
+      return {
+        ...state,
+        summaryRecipient: {
+          // Renaming care_recipient_id to recipientId and
+          // recipient_summary to recipientSummary
+          // in order to keep
+          // the app's variable naming consistency
+          recipientId: action.data.care_recipient_id,
+          recipientSummary: action.data.recipient_summary,
+        },
+      };
     default:
       return state;
   }

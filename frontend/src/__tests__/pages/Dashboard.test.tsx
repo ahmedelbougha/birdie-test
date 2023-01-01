@@ -58,9 +58,9 @@ describe("Dashboard Page", () => {
   it("Dashboard page in initial state", () => {
     testStore = mockStore({
       recipients: {
-        data: [],
-        summaryRecipient: {},
-        eventsRecipient: [],
+        list: null,
+        summaryRecipient: null,
+        eventsRecipient: null,
       },
     });
     const component = renderer.create(

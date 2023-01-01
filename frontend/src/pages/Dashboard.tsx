@@ -12,9 +12,9 @@ import {
 import {
   getEventsRecipient,
   getSummaryRecipient
-} from "../store/actions/recipients";
+} from "../store/actions";
 import { RootState } from "../store/index";
-import { Event, Summary } from "../store/reducers/recipients.d";
+import { Event } from "../types";
 import { buildEventTableEvents } from "../utils/functions";
 
 /**
@@ -31,7 +31,10 @@ function Dashboard(): JSX.Element {
     (
       state: RootState
     ): {
-      summaryRecipient: Summary;
+      summaryRecipient: {
+        recipientId: string;
+        recipientSummary: { [key: string]: string };
+      };
       eventsRecipient: Event[];
     } => {
       return state.recipients;
@@ -44,7 +47,7 @@ function Dashboard(): JSX.Element {
     // contain different recipientId
     if (
       recipientId &&
-      (!summaryRecipient || summaryRecipient.care_recipient_id !== recipientId)
+      (!summaryRecipient || summaryRecipient.recipientId !== recipientId)
     ) {
       // get the summary of recipient events (counts)
       // used in EventTable and using the recipient id in DashboardCard (due to we don't have access to the name of
@@ -75,15 +78,12 @@ function Dashboard(): JSX.Element {
       <Container>
         <CardsWrapper>
           <DashboardCard
-            title={`Mr./Mrs. ${summaryRecipient.care_recipient_id.substring(
-              0,
-              5
-            )}`}
+            title={`Mr./Mrs. ${summaryRecipient.recipientId.substring(0, 5)}`}
             image=""
           />
           <EventTable
             eventTypes={eventTypes}
-            summaryTypes={summaryRecipient.recipient_summary}
+            summaryTypes={summaryRecipient.recipientSummary}
           />
         </CardsWrapper>
         <EventTimeline events={eventsRecipient} />

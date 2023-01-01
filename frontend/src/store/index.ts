@@ -1,7 +1,7 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
 import createSagaMiddleware from '@redux-saga/core';
-import generalReducer from './reducers/general';
-import recipientsReducer from './reducers/recipients';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { generalReducer, recipientsReducer } from './reducers';
+
 import { watcherSaga } from './sagas';
 
 const rootReducer = combineReducers({

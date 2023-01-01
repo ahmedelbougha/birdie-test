@@ -10,9 +10,9 @@ describe("Reducers", () => {
   it("SUCCESS_LIST_RECIPIENTS reducer returns correct state", () => {
     let returnedData = recipientsReducer(
       { data: { initialKey: "initialValue" } } as any,
-      { type: SUCCESS_LIST_RECIPIENTS, data: { someKey: "someValue" } as any }
+      { type: SUCCESS_LIST_RECIPIENTS, data: [{ care_recipient_id: "some-recipient-id" }] as any }
     );
-    expect(returnedData).toMatchObject({ data: { someKey: "someValue" } });
+    expect(returnedData).toMatchObject({ list: [{ recipientId: "some-recipient-id" }] });
   });
   it("SUCCESS_SUMMARY_RECIPIENT returns empty state", () => {
     let returnedData = recipientsReducer({} as any, {
@@ -25,18 +25,18 @@ describe("Reducers", () => {
     // mock of response data
     const data = {
       care_recipient_id: "some-recipient-id",
-      recipient_summary: [
-        { event_type: "a", event_type_count: 1 },
-        { event_type: "b", event_type_count: 3 },
-        { event_type: "c", event_type_count: 5 },
-      ],
+      recipient_summary: {
+        a: 1,
+        b: 3,
+        c: 5,
+      },
     };
 
     // data after restructuring
-    const finalData =  {
+    const finalData = {
       recipientId: data.care_recipient_id,
-      recipientSummary: {a: 1, b: 3, c:5}
-    }
+      recipientSummary: { a: 1, b: 3, c: 5 },
+    };
 
     let returnedData = recipientsReducer(undefined, {
       type: SUCCESS_SUMMARY_RECIPIENT,

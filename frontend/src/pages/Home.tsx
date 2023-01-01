@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, Card, CardsWrapper, StyledError } from "../components";
 import { RootState } from '../store';
-import { getListRecipients } from '../store/actions/recipients';
-import { CareRecipient } from '../store/reducers/recipients.d';
+import { getListRecipients } from '../store/actions';
+import { CareRecipient } from '../types';
 
 /**
  * Home page component
@@ -14,7 +14,7 @@ function Home(): JSX.Element {
   const dispatch = useDispatch();
 
   const recipients  = useSelector((state: RootState): CareRecipient[] => {
-    return state.recipients.data;
+    return state.recipients.list;
   });
 
   useEffect(() => {
@@ -44,12 +44,12 @@ function Home(): JSX.Element {
       <CardsWrapper>
         {recipients.map((recipient: CareRecipient, index) => (
           <Card
-            title={`Mr./Mrs. ${recipient.care_recipient_id.substring(0, 5)}`}
+            title={`Mr./Mrs. ${recipient.recipientId.substring(0, 5)}`}
             image=""
             key={index}
           >
             <p>Birdie Client</p>
-            <Link to={`/dashboard/${recipient.care_recipient_id}`}>
+            <Link to={`/dashboard/${recipient.recipientId}`}>
               <Button> Details </Button>
             </Link>
           </Card>

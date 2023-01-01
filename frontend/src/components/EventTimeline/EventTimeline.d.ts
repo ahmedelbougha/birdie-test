@@ -1,4 +1,4 @@
-import { Event } from '../../store/reducers/recipients.d';
+import { Event } from '../../types';
 
 export interface EventTimelineProps {
   events: Event[];

@@ -335,12 +335,4 @@ Array [
 ]
 `;
 
-exports[`Dashboard Page Dashboard page in initial state 1`] = `
-<div
-  className="sc-iBYQkv kdcjiC"
->
-  <h2>
-    There's no matching care recipients records!
-  </h2>
-</div>
-`;
+exports[`Dashboard Page Dashboard page in initial state 1`] = `null`;
