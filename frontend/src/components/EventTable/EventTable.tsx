@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { StyledTable, TableProps } from '.';
+import { StyledTable, TableProps } from './';
 
 export function EventTable({ eventTypes, summaryTypes }: TableProps) {
   // Below building of the table row by row

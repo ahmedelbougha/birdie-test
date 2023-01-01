@@ -4,23 +4,29 @@ import { Spinner } from "./components";
 import { DashboardPage, ErrorPage, HomePage } from "./pages";
 import { RootState } from "./store";
 
+// create the app routes
 const router = createBrowserRouter([
   {
-    // error page for any non existing page
-    path: "*",
-    element: <ErrorPage errorStatus={true} />,
-  },
-  {
-    // home page
+    // root of the router and default error element to catch any errors
     path: "/",
-    element: <HomePage />,
     errorElement: <ErrorPage errorStatus={true} />,
-  },
-  {
-    // dashboard page
-    path: "/dashboard/:recipientId",
-    element: <DashboardPage />,
-    errorElement: <ErrorPage errorStatus={true} />,
+    children: [
+      {
+        // home page
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        // dashboard page
+        path: "/dashboard/:recipientId",
+        element: <DashboardPage />,
+      },
+      {
+        // error page for any non existing path
+        path: "*",
+        element: <ErrorPage errorStatus={true} />,
+      },
+    ],
   },
 ]);
 
@@ -44,11 +50,8 @@ function App() {
   if (loading > 0) {
     return <Spinner />;
   }
-  return (
-    <>
-      <RouterProvider router={router} fallbackElement={<Spinner />} />
-    </>
-  );
+
+  return <RouterProvider router={router} fallbackElement={<Spinner />} />;
 }
 
 export default App;

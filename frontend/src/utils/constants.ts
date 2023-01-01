@@ -20,6 +20,7 @@ export const theme = {
     },
   },
   placeHolderImage,
+  mobile: "500px",
 };
 
 export const EventTypes: {

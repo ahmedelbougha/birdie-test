@@ -4,5 +4,5 @@ export { default as EventTimeline, EventTimelineElement } from "./EventTimeline"
 export { default as Footer } from "./Footer";
 export { default as Header } from "./Header";
 export { default as Spinner } from "./Spinner";
-export { Button, Container, GlobalStyles, Layout, StyledError } from "./styles";
+export { Button, Container, GlobalStyles, Layout, StyledError } from "./Styles";
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ThemeProps, ImageProps } from '../../types';
+import { ImageProps, ThemeProps } from '../../types';
 
 export const StyledHeader = styled.header<ThemeProps>`
   background-color: ${({ theme }) => theme.colors.header.backgroundColor};

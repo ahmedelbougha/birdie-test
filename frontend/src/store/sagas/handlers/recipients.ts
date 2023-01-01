@@ -1,4 +1,6 @@
 import { call, put } from "redux-saga/effects";
+import { Params } from "../../../types";
+import { apiRequest } from "../../../utils/functions";
 import {
   setFetchFailed,
   setLoading,
@@ -6,8 +8,6 @@ import {
   successListRecipients,
   successSummaryRecipient
 } from "../../actions";
-import { apiRequest } from "../requests";
-import { Params } from "./recipients.d";
 
 /**
  * Handler function for the list of recipients request

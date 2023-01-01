@@ -1,5 +1,5 @@
 import axios from "axios";
-import { apiRequest } from "../../../../store/sagas/requests";
+import { apiRequest } from "../../utils/functions";
 
 jest.mock("axios");
 

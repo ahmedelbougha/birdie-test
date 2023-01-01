@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { CardProps, StyledCard, StyledCardDivider } from '.';
+import { CardProps, StyledCard, StyledCardDivider } from './';
 
 /**
  * Card component for the care recipient to be displayed in the home page

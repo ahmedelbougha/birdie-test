@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { ThemeProps } from "../../types";
 
-export const Layout = styled.div`
+export const Layout = styled.div<ThemeProps>`
   display: flex;
   flex-direction: column;
   min-height: 97vh;
@@ -10,5 +11,9 @@ export const Layout = styled.div`
 
   & > * {
     padding: 20px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    text-align: center;
   }
 `;

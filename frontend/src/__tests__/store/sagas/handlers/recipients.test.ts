@@ -9,7 +9,7 @@ import { setFetchFailed, setLoading } from "../../../../store/actions/general";
 
 import {
   apiRequest
-} from "../../../../store/sagas/requests";
+} from "../../../../utils/functions";
 
 import {
   handelListRecipients,
@@ -18,7 +18,7 @@ import {
 
 jest.mock("redux-saga/effects");
 jest.mock("../../../../store/actions/recipients");
-jest.mock("../../../../store/sagas/requests");
+jest.mock("../../../../utils/functions");
 
 let recipientId = "some-recipient-id";
 

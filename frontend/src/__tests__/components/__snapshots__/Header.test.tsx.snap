@@ -2,16 +2,16 @@
 
 exports[`Header renders 1`] = `
 <header
-  className="sc-eDvSVe gBdEOh"
+  className="sc-iBYQkv lmTaAg"
 >
   <div
-    className="sc-gswNZR lhJxqP"
+    className="sc-ipEyDJ kWmAWU"
   >
     <nav
-      className="sc-jSUZER dAZdIH"
+      className="sc-ftTHYK dAUOxy"
     >
       <img
-        className="sc-gKPRtg VGwCa"
+        className="sc-pyfCe jlRxxO"
         src="/images/birdie-logo.svg"
         width="110"
       />

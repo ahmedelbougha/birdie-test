@@ -25,7 +25,7 @@ function Home(): JSX.Element {
   }, [dispatch, recipients]);
 
 
-  if (!recipients) {
+  if (recipients === null) {
     return <></>;
   }
 

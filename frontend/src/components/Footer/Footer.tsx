@@ -1,5 +1,5 @@
-import { StyledFooter, StyledFooterLogo } from '.';
-import { Container } from '../styles';
+import { Container } from '../';
+import { StyledFooter, StyledFooterLogo } from './';
 
 export function Footer() {
   return (

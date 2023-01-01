@@ -9,10 +9,7 @@ import {
   EventTimeline,
   StyledError
 } from "../components";
-import {
-  getEventsRecipient,
-  getSummaryRecipient
-} from "../store/actions";
+import { getEventsRecipient, getSummaryRecipient } from "../store/actions";
 import { RootState } from "../store/index";
 import { Event } from "../types";
 import { buildEventTableEvents } from "../utils/functions";
@@ -60,7 +57,7 @@ function Dashboard(): JSX.Element {
     }
   }, [dispatch, recipientId, summaryRecipient]);
 
-  if (!eventsRecipient) {
+  if (eventsRecipient === null) {
     return <></>;
   }
 

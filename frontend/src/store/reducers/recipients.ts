@@ -25,7 +25,7 @@ const recipientsReducer = (state = initialState, action: AnyAction): any => {
       return {
         ...state,
         // Renaming care_recipient_id to recipientId in order to keep
-        // the app's variable naming consistency
+        // the app's variable naming consistent
         list: action.data.map((recipient: { care_recipient_id: string }) => {
           return { recipientId: recipient.care_recipient_id };
         }),
@@ -36,10 +36,11 @@ const recipientsReducer = (state = initialState, action: AnyAction): any => {
       return {
         ...state,
         summaryRecipient: {
-          // Renaming care_recipient_id to recipientId and
+          // Renaming care_recipient_id to recipientId
+          // and
           // recipient_summary to recipientSummary
           // in order to keep
-          // the app's variable naming consistency
+          // the app's variable naming consistent
           recipientId: action.data.care_recipient_id,
           recipientSummary: action.data.recipient_summary,
         },

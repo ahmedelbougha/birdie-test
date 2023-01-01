@@ -34,9 +34,12 @@ export const StyledCard = styled.div<ThemeProps>`
     flex: 1;
     width: 100%;
   }
-
+  & > div:nth-child(2) {
+    text-align: center;
+  }
   @media (max-width: ${({ theme }) => theme.mobile}) {
     flex-direction: column;
+    text-align: center;
   }
 `;
 
@@ -55,9 +58,15 @@ export const StyledDashboardCard = styled.div`
     flex: 1;
     text-align: center;
   }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 45%;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
-export const StyledCardsWrapper = styled.div`
+export const StyledCardsWrapper = styled.div<ThemeProps>`
   width: 100%;
   padding: 0 20px;
   margin: auto;
@@ -65,4 +74,8 @@ export const StyledCardsWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    justify-content: center;
+    text-align: center;
+  }
 `;

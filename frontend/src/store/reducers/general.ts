@@ -1,5 +1,5 @@
+import { Error } from '../../types';
 import { FETCH_FAILED, LOADING } from '../types';
-import { Error } from './general.d';
 const initialState = {
   loading: 0,
   error: {

@@ -1,9 +1,9 @@
+import { Container } from '../';
 import {
   StyledHeader,
   StyledHeaderLogo,
   StyledNav
-} from '.';
-import { Container } from '../styles';
+} from './';
 
 export function Header() {
   return (

@@ -1,5 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Page Home page after loading recipients 1`] = `null`;
+exports[`Home Page Home page after loading recipients 1`] = `
+Array [
+  <h2>
+    Welcome to Birdie customer portal.
+  </h2>,
+  <div
+    className="sc-hLBbgP jcEtdA"
+  >
+    <div
+      className="sc-gswNZR eVCMhJ"
+    >
+      <div>
+        <img
+          alt="Mr./Mrs. df50c"
+          src="placeholder.png"
+        />
+      </div>
+      <div>
+        <h2>
+          Mr./Mrs. df50c
+        </h2>
+        <div
+          className="sc-bcXHqe AOYhz"
+        />
+        <p>
+          Birdie Client
+        </p>
+        <a
+          href="/dashboard/df50cac5-293c-490d-a06c-ee26796f850d"
+          onClick={[Function]}
+        >
+          <button
+            className="sc-kDvujY fuLqXM"
+          >
+             Details 
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>,
+]
+`;
 
 exports[`Home Page Home page in initial state 1`] = `null`;

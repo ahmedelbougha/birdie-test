@@ -43,7 +43,7 @@ describe("Home Page", () => {
   it("Home page after loading recipients", () => {
     testStore = mockStore({
       recipients: {
-        data: [
+        list: [
           {
             recipientId: "df50cac5-293c-490d-a06c-ee26796f850d",
           },

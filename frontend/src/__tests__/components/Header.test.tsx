@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
-import Header from '../../components/Header';
+import { Header } from '../../components';
 import { theme } from '../../utils/constants';
 
 describe('Header', () => {

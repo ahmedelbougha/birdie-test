@@ -2,13 +2,13 @@
 
 exports[`Footer renders 1`] = `
 <footer
-  className="sc-eDvSVe cvwwxI"
+  className="sc-jSUZER jzYyze"
 >
   <div
-    className="sc-gswNZR lhJxqP"
+    className="sc-ipEyDJ kWmAWU"
   >
     <img
-      className="sc-jSUZER iyDiha"
+      className="sc-gKPRtg VGwCa"
       src="/images/birdie-logo.svg"
       width="110"
     />
