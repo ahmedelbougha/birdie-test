@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  frontend:
+    image: "node:18"
+    command: bash -c "yarn && yarn start"
+    working_dir: /app
+    env_file:
+      - frontend/.env
+    volumes:
+      - ${PWD}/frontend:/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+
+  backend:
+    image: "node:18"
+    command: bash -c "yarn && yarn dev"
+    working_dir: /app
+    env_file:
+      - backend/.env
+    volumes:
+      - ${PWD}/backend:/app
+    ports:
+      - 8000:8000

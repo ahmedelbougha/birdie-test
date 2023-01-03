@@ -101,10 +101,11 @@ Here's the technical stack that I used while working on the challenge:
 - [Jest](https://jestjs.io/)
 - [ESLint](https://eslint.org/)
 ## Usage
-
+**Note: There's docker-compose.yml if the reviewer would like to test the application locally.**
 1. Start the API. (Run the following commands within the `backend` folder)
 
-   a. copy env.example to .env and change the values of database variables inside
+   a. Copy `env.example` to `.env` and change the values of database environment variables inside that file.
+
    b. Install the dependencies
    ```bash
    yarn install
@@ -128,7 +129,8 @@ Here's the technical stack that I used while working on the challenge:
 
 2. Start the React app  (Run the following commands within the `front-end` folder)
 
-    a. copy env.example to .env and change the values of backend domain variable inside
+    a. Copy `env.example` to `.env` and change the values of backend domain environment variable inside that file.
+
     b. Install the dependencies
    ```bash
    yarn install
@@ -245,4 +247,4 @@ g. You may notice that the `count` in API call are not reflecting the actual ret
 
 h. I implemented Github action to fetch dependencies, check the linting, run the tests and deploy to a server for both Frontend and Backend, that way I made my builds and changes deployments to AWS server easier and smoother.
 
-i. I believe using docker/docker-compose would make the task easier to test.
+i. I believe using docker/docker-compose would make the task easier to test. (Already included if you would to use.)
