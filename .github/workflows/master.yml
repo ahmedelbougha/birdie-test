@@ -30,7 +30,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: 'backend/node_modules'
-          key: ${{ runner.os }}-backend-node-${{ hashFiles('backend/yarn-lock.json') }}
+          key: ${{ runner.os }}-backend-node-${{ hashFiles('backend/yarn.lock') }}
 
       - name: Backend Fetching dependencies
         run: cd backend && yarn --frozen-lockfile
@@ -71,7 +71,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: 'frontend/node_modules'
-          key: ${{ runner.os }}-frontend-node-${{ hashFiles('frontend/yarn-lock.json') }}
+          key: ${{ runner.os }}-frontend-node-${{ hashFiles('frontend/yarn.lock') }}
 
       - name: Frontend Fetching dependencies
         run: cd frontend && yarn --frozen-lockfile
