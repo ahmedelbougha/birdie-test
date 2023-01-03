@@ -23,11 +23,11 @@
     "build": "REACT_APP_BACKEND_URL=http://birdie.aelbougha.online react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
+    "lint": "eslint --format=stylish-verbose --ext js,ts,tsx src",
     "lint:fix": "eslint --fix ."
   },
   "resolutions": {
-    "react-error-overlay": "6.0.9"
+    "@types/react": "^17.0.0"
   },
   "eslintConfig": {
     "extends": [
@@ -72,6 +72,7 @@
     "@types/styled-components": "^5.1.26",
     "eslint": "^8.30.0",
     "eslint-config-react-app": "^7.0.1",
+    "eslint-formatter-stylish-verbose": "^0.0.1",
     "jest-styled-components": "^7.1.1",
     "react-scripts": "^5.0.1",
     "react-test-renderer": "^17.0.2",
