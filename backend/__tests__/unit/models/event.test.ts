@@ -1,5 +1,4 @@
 import Event from "../../../src/models/event";
-// import { DataTypes } from "sequelize";
 
 describe("Event model", () => {
   it("Should has the correct fields", () => {

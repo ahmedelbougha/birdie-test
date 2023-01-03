@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
-let recipientId = "some-recipient-id";
-let responseObject = { statusCode: 200, body: {} };
+const recipientId = "some-recipient-id";
+const responseObject = { statusCode: 200, body: {} };
 let request: Partial<Request> = {};
 let response: Partial<Response> = {};
 
