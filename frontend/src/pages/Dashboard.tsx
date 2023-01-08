@@ -18,7 +18,7 @@ import { buildEventTableEvents } from "../utils/functions";
  * Dashboard component to display recipient complete information
  * @returns JSX.Element
  */
-function Dashboard(): JSX.Element {
+function Dashboard(): JSX.Element | null {
   const dispatch = useDispatch();
   // variable to hold the different event types
   let eventTypes: string[][] = buildEventTableEvents();
@@ -47,8 +47,8 @@ function Dashboard(): JSX.Element {
       (!summaryRecipient || summaryRecipient.recipientId !== recipientId)
     ) {
       // get the summary of recipient events (counts)
-      // used in EventTable and using the recipient id in DashboardCard (due to we don't have access to the name of
-      // the care recipient)
+      // used in EventTable and using the recipient id in DashboardCard
+      // (due to we don't have access to the name of the care recipient)
       dispatch(getSummaryRecipient(recipientId));
 
       // get detailed events of the recipient
@@ -58,7 +58,7 @@ function Dashboard(): JSX.Element {
   }, [dispatch, recipientId, summaryRecipient]);
 
   if (eventsRecipient === null) {
-    return <></>;
+    return null;
   }
 
   if (eventsRecipient.length === 0) {

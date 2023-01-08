@@ -10,7 +10,7 @@ import { CareRecipient } from '../types';
  * Home page component
  * @returns JSX.Element
  */
-function Home(): JSX.Element {
+function Home(): JSX.Element | null {
   const dispatch = useDispatch();
 
   const recipients  = useSelector((state: RootState): CareRecipient[] => {
@@ -26,7 +26,7 @@ function Home(): JSX.Element {
 
 
   if (recipients === null) {
-    return <></>;
+    return null;
   }
 
   // in case of successful call but no care recipient
@@ -42,11 +42,11 @@ function Home(): JSX.Element {
     <>
       <h2>Welcome to Birdie customer portal.</h2>
       <CardsWrapper>
-        {recipients.map((recipient: CareRecipient, index) => (
+        {recipients.map((recipient: CareRecipient) => (
           <Card
             title={`Mr./Mrs. ${recipient.recipientId.substring(0, 5)}`}
             image=""
-            key={index}
+            key={recipient.recipientId}
           >
             <p>Birdie Client</p>
             <Link to={`/dashboard/${recipient.recipientId}`}>

@@ -11,8 +11,8 @@ import EventTimelineElement from "./EventTimelineElement";
 export function EventTimeline({ events }: EventTimelineProps) {
   return (
     <VerticalTimeline>
-      {events.map((event, index) => (
-        <EventTimelineElement event={event} key={index} />
+      {events.map((event) => (
+        <EventTimelineElement event={event} key={event.id} />
       ))}
 
       <VerticalTimelineElement

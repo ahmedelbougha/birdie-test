@@ -12,11 +12,11 @@ export function Card({
   image,
   children,
 }: CardProps): JSX.Element {
-  const themeContext = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
   return (
     <StyledCard>
       <div>
-        <img src={image || themeContext.placeHolderImage} alt={title} />
+        <img src={image || theme.placeHolderImage} alt={title} />
       </div>
       <div>
         <h2>{title}</h2>

@@ -3,11 +3,11 @@ import { ThemeContext } from 'styled-components';
 import { CardProps, StyledDashboardCard } from './';
 
 export default function DashboardCard({ title, image }: CardProps) {
-  const themeContext = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
   return (
     <StyledDashboardCard>
       <div>
-        <img src={image || themeContext.placeHolderImage} alt={title} />
+        <img src={image || theme.placeHolderImage} alt={title} />
       </div>
       <div>
         <h2>{title}</h2>
