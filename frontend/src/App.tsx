@@ -15,7 +15,6 @@ const router = createBrowserRouter([
   {
     // root of the router and default error element to catch any errors
     path: "/",
-    errorElement: <ErrorPage errorStatus={true} />,
     children: [
       {
         // home page
