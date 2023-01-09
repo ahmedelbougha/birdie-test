@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
@@ -21,7 +21,9 @@ import { buildEventTableEvents } from "../utils/functions";
 function Dashboard(): JSX.Element | null {
   const dispatch = useDispatch();
   // variable to hold the different event types
-  let eventTypes: string[][] = buildEventTableEvents();
+  // since the buildEventTableEvents return the same output every time, then it's better
+  // to put it in useMemo without list of dependencies, that way it's calculated once
+  let eventTypes: string[][] = useMemo(():string[][] => buildEventTableEvents(), []);
   let { recipientId } = useParams();
 
   const { summaryRecipient, eventsRecipient } = useSelector(
