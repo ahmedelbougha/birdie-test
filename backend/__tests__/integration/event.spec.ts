@@ -1,5 +1,5 @@
-import app from "../../src/application";
 import * as request from "supertest";
+import app from "../../src/application";
 
 describe("Test event controller actions", () => {
   it("Get /events should return events with status 200", async () => {
@@ -12,9 +12,9 @@ describe("Test event controller actions", () => {
       });
   });
 
-  it("Get /events/{recipientId} should return recipient's events with status 200", async () => {
+  it("Get /events/recipient/{recipientId} should return recipient's events with status 200", async () => {
     await request(app)
-      .get("/events/df50cac5-293c-490d-a06c-ee26796f850d")
+      .get("/events/recipient/df50cac5-293c-490d-a06c-ee26796f850d")
       .expect("Content-Type", /json/)
       .expect(200)
       .expect(function (res) {
