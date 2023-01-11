@@ -57,7 +57,7 @@ export function* handelEventRecipients({ recipientId }: Params): any {
     // start the loader
     yield put(setLoading(true));
     // request the data
-    const response = yield call(() => apiRequest(`events/${recipientId}`));
+    const response = yield call(() => apiRequest(`events/recipient/${recipientId}`));
     // pass the data
     const { data } = response.data;
     yield put(successEventsRecipient(data));

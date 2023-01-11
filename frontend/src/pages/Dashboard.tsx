@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
@@ -18,10 +18,12 @@ import { buildEventTableEvents } from "../utils/functions";
  * Dashboard component to display recipient complete information
  * @returns JSX.Element
  */
-function Dashboard(): JSX.Element {
+function Dashboard(): JSX.Element | null {
   const dispatch = useDispatch();
   // variable to hold the different event types
-  let eventTypes: string[][] = buildEventTableEvents();
+  // since the buildEventTableEvents return the same output every time, then it's better
+  // to put it in useMemo without list of dependencies, that way it's calculated once
+  let eventTypes: string[][] = useMemo(():string[][] => buildEventTableEvents(), []);
   let { recipientId } = useParams();
 
   const { summaryRecipient, eventsRecipient } = useSelector(
@@ -47,8 +49,8 @@ function Dashboard(): JSX.Element {
       (!summaryRecipient || summaryRecipient.recipientId !== recipientId)
     ) {
       // get the summary of recipient events (counts)
-      // used in EventTable and using the recipient id in DashboardCard (due to we don't have access to the name of
-      // the care recipient)
+      // used in EventTable and using the recipient id in DashboardCard
+      // (due to we don't have access to the name of the care recipient)
       dispatch(getSummaryRecipient(recipientId));
 
       // get detailed events of the recipient
@@ -58,7 +60,7 @@ function Dashboard(): JSX.Element {
   }, [dispatch, recipientId, summaryRecipient]);
 
   if (eventsRecipient === null) {
-    return <></>;
+    return null;
   }
 
   if (eventsRecipient.length === 0) {

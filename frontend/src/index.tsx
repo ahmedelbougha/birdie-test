@@ -1,27 +1,36 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import App from "./App";
-import { Container, Footer, GlobalStyles, Header, Layout } from "./components";
+import {
+  Container,
+  Footer,
+  GlobalStyles,
+  Header,
+  Layout,
+  Spinner
+} from "./components";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store/index";
 import { theme } from "./utils/constants";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Header />
-      <Layout>
-        <Provider store={store}>
-          <Container>
-            <App />
-          </Container>
-        </Provider>
-      </Layout>
-      <Footer />
-    </ThemeProvider>
+    <Suspense fallback={<Spinner />}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Header />
+        <Layout>
+          <Provider store={store}>
+            <Container>
+              <App />
+            </Container>
+          </Provider>
+        </Layout>
+        <Footer />
+      </ThemeProvider>
+    </Suspense>
   </React.StrictMode>,
   document.getElementById("root")
 );

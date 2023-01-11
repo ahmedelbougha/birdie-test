@@ -32,8 +32,8 @@ export default function EventTimelineElement({
         {EventTypes[event.event_type]['extraData'].map(
           // please check the EventTypes constant for extraData array of keys
           // keys vary based on the event type
-          (dataKey: string, index): JSX.Element => (
-            <p key={dataKey + index}>
+          (dataKey: string): JSX.Element => (
+            <p key={dataKey}>
               {(event.payload[dataKey] as string) || ''}
             </p>
           )

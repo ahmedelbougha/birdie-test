@@ -1,15 +1,20 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Spinner } from "./components";
-import { DashboardPage, ErrorPage, HomePage } from "./pages";
 import { RootState } from "./store";
+
+// lazy loading for code splitting
+const DashboardPage = React.lazy(() => import("./pages/Dashboard"));
+const ErrorPage = React.lazy(() => import("./pages/Error"));
+const HomePage = React.lazy(() => import("./pages/Home"));
+
 
 // create the app routes
 const router = createBrowserRouter([
   {
     // root of the router and default error element to catch any errors
     path: "/",
-    errorElement: <ErrorPage errorStatus={true} />,
     children: [
       {
         // home page

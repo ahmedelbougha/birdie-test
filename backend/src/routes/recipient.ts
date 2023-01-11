@@ -13,7 +13,7 @@ router.get(
 );
 
 router.get(
-  "/:recipientId?",
+  "/:recipientId",
   (request: Request, response: Response, next: NextFunction): void => {
     // A limitation in express, action functions must return void
     // if it returns Promise<void>, the router cannot accept it
